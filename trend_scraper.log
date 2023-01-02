@@ -1,0 +1,308 @@
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<ServerGUI.accept_connection() done, defined at /Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py:58> exception=ConnectionResetError(54, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ServerGUI.py", line 62, in accept_connection
+    data = await reader.read(1024)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 669, in read
+    await self._wait_for_data('read')
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/streams.py", line 502, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/selector_events.py", line 854, in _read_ready__data_received
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 54] Connection reset by peer
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[INFO] main: Starting server...
+[INFO] main: Server successfully started.
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
