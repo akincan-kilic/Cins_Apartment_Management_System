@@ -1,7 +1,8 @@
-
-
 class ClientCard:
-    def __init__(self, card):
-        self.card = card
-        self.card_id = card.id
-        self.card_name = card.name
+    def __init__(self, name, apartment_no):
+        self.name = name
+        self.apartment_no = apartment_no
+        self.id = self.generate_id()
+
+    def generate_id(self):
+        return f"{self.name}_{self.apartment_no}"

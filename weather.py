@@ -1,14 +1,14 @@
 import requests
 
 class WeatherDataFetcher:
-    def __init__(self):
+    def __init__(self) -> None:
         self.base_url = "https://api.open-meteo.com/v1/forecast?"
         self.default_coordinates = (38.6770, 27.3038) # Manisa Celal Bayar University
 
-    def get_manisa_weather_data(self):
+    def get_manisa_weather_data(self) -> dict:
         return self.fetch_weather_data(*self.default_coordinates)
 
-    def fetch_weather_data(self, latitude, longitude, current_weather=True):
+    def fetch_weather_data(self, latitude, longitude, current_weather=True) -> dict:
         params = {
             "latitude": latitude,
             "longitude": longitude,
@@ -18,11 +18,11 @@ class WeatherDataFetcher:
         response = requests.get(construct_url)
         return self.__parse_response(response.json())
 
-    def __parse_response(self, response):
+    def __parse_response(self, response) -> dict:
         temperature = response["current_weather"]["temperature"]
         wind_speed = response["current_weather"]["windspeed"]
         wind_direction = response["current_weather"]["winddirection"]
-        return str({"temperature": temperature, "wind_speed": wind_speed, "wind_direction": wind_direction})
+        return {"temperature": temperature, "wind_speed": wind_speed, "wind_direction": wind_direction}
 
 def main():
     fetcher = WeatherDataFetcher()
