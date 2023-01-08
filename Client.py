@@ -1,8 +1,10 @@
-import threading
-import socket
-import time
-import AkinProtocol
 import multiprocessing
+import socket
+import threading
+import time
+
+import AkinProtocol
+
 
 class Client:
     def __init__(self, host, port):
@@ -19,7 +21,7 @@ class Client:
     def start(self):
         self.socket.connect((self.host, self.port))
         print("Connected to server")
-        welcome_message = self.socket.recv(1024).decode() # Receive the welcome message from the server
+        welcome_message = self.socket.recv(1024).decode()  # Receive the welcome message from the server
         print(welcome_message)
         self.client_manager_thread.start()
 
@@ -106,8 +108,10 @@ class ClientListenerThread(threading.Thread):
     def stop(self):
         self.running_flag = False
 
+
 def main():
     Client("0.0.0.0", 8080).start()
+
 
 if __name__ == '__main__':
     main()

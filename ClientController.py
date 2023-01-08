@@ -1,12 +1,16 @@
-import custom_exceptions as ce
-from Client import Client
-from ClientCard import ClientCard
 import multiprocessing
 import threading
 
+import custom_exceptions as ce
+from Client import Client
+from ClientCard import ClientCard
+
+
 class ClientController:
     """This class is responsible for communucating the Client code with the GUI of the client. Following the MVC pattern."""
-    def __init__(self, host:str, port:int):
+
+    def __init__(self, host: str, port: int):
+        self.client = None
         self.host = host
         self.port = port
         self.card = None
@@ -59,13 +63,13 @@ class ClientController:
         """
         if not self.client_running:
             raise ce.ClientNotRunningError("Client is not running.")
-        if (client_closed := self.client.close_connection()):
+        if client_closed := self.client.close_connection():
             self.client_running = False
             return True
         else:
             raise ce.ClientCouldNotBeClosedError("Client could not be closed.")
 
-    def send_message(self, message:str) -> bool:
+    def send_message(self, message: str) -> bool:
         """Sends a message to the server. Returns True if the message was sent successfully, otherwise raises an exception.
         Exceptions:
             ClientNotRunningError: If the client is not running.

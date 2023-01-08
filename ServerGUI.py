@@ -1,37 +1,25 @@
-import flet as ft
+import multiprocessing
+import sys
+import threading
 import time
-import datetime
 
+import flet as ft
 from flet import Row, Column
-import logging
-from Server import Server
-from ServerController import ServerController
+
 import Utility
 import custom_exceptions as ce
-import threading
-import sys
-import multiprocessing
+from Server import Server
+from ServerController import ServerController
 
-# Logger configuration.
-logging.basicConfig(
-    format="[%(levelname)s] %(name)s: %(message)s",
-    datefmt="%H:%M:%S",
-    handlers=[
-        logging.FileHandler("trend_scraper.log"),
-        logging.StreamHandler()
-    ]
-)
+logger = Utility.get_logger()
 
-logging.getLogger('flet').setLevel(logging.ERROR)
-logging.getLogger('snscrape').setLevel(logging.ERROR)
-logger = logging.getLogger('main')
-logger.setLevel(logging.DEBUG)
 
 class ServerGUI:
     """GUI for the Tweet Classifier App."""
     DEFAULT_HOST = "0.0.0.0"
     DEFAULT_PORT = 8080
     server: Server
+
     def __init__(self):
         self.host = self.DEFAULT_HOST
         self.port = self.DEFAULT_PORT
@@ -40,10 +28,16 @@ class ServerGUI:
         self.APP_NAME = "Cins Apartment Server Admin Panel"
 
         ### Main Application ###
-        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab", width=800, text_align=ft.TextAlign.LEFT)
+        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab",
+                                 width=800, text_align=ft.TextAlign.LEFT)
         self.app_icon = ft.Icon(name=ft.icons.ACCESS_ALARM, size=50)
-        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme", icon_size=24, on_click=self.__switch_theme)
-        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28, on_click=self.__on_click_exit_button)
+        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme",
+                                            icon_size=24, on_click=self.__switch_theme)
+        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28,
+                                         on_click=self.__on_click_exit_button)
+
+        self.fetch_frequency_textbox = ft.TextField(label="Weather and Currency Fetch Frequency (in seconds)",
+                                                    value="60", width=200)
 
         ### Server Controls ###
         self.start_button = ft.ElevatedButton(text="Start Server", on_click=self.__on_click_start_button)
@@ -55,13 +49,19 @@ class ServerGUI:
 
         self.clients_grid_view = ft.GridView(expand=True, max_extent=150, child_aspect_ratio=1)
 
-        self.open_connections_length_text = ft.Text(value="Open Connections: 0", style=ft.TextThemeStyle.BODY_LARGE, font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
-        self.open_connections_list_text = ft.Text(value="", style=ft.TextThemeStyle.BODY_LARGE, font_family="RobotoSlab", width=800, text_align=ft.TextAlign.LEFT)
+        self.open_connections_length_text = ft.Text(value="Open Connections: 0", style=ft.TextThemeStyle.BODY_LARGE,
+                                                    font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
+        self.open_connections_list_text = ft.Text(value="", style=ft.TextThemeStyle.BODY_LARGE,
+                                                  font_family="RobotoSlab", width=800, text_align=ft.TextAlign.LEFT)
 
-        self.server_status_text = ft.Text(value="Server Status:", style=ft.TextThemeStyle.BODY_LARGE, font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
-        self.server_status_online_text = ft.Text(value="Offline", style=ft.TextThemeStyle.BODY_LARGE, font_family="RobotoSlab", width=100, text_align=ft.TextAlign.LEFT, color=ft.colors.RED)
+        self.server_status_text = ft.Text(value="Server Status:", style=ft.TextThemeStyle.BODY_LARGE,
+                                          font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
+        self.server_status_online_text = ft.Text(value="Offline", style=ft.TextThemeStyle.BODY_LARGE,
+                                                 font_family="RobotoSlab", width=100, text_align=ft.TextAlign.LEFT,
+                                                 color=ft.colors.RED)
         self.open_connections_listener = threading.Thread(target=self.list_open_connections, daemon=True).start()
-        self.server_log_listener = threading.Thread(target=self.listen_for_messages_from_server_and_update_message_box, daemon=True).start()
+        self.server_log_listener = threading.Thread(target=self.listen_for_messages_from_server_and_update_message_box,
+                                                    daemon=True).start()
 
     def start_server(self):
         self.update_msg_list("Starting server...")
@@ -126,6 +126,10 @@ class ServerGUI:
             self.server_status_online_text.color = ft.colors.RED
         self.page.update()
 
+    def __change_fetch_frequency(self, _) -> None:
+        self.controller.fetch_frequency = int(self.fetch_frequency_textbox.value)
+        # todo
+
     def update_msg_list(self, message: str) -> None:
         self.msg_list.controls.append(ft.Text(f"{Utility.get_detailed_time()}: {message}"))
         self.page.update()
@@ -188,10 +192,12 @@ class ServerGUI:
         self.page.add(Row(controls=[self.start_button,
                                     self.stop_button,
                                     self.server_status_text,
-                                    self.server_status_online_text], wrap=False))
+                                    self.server_status_online_text,
+                                    self.fetch_frequency_textbox], wrap=False))
 
     def __draw_open_connections(self) -> None:
-        connections_col1 = Column(controls=[self.open_connections_length_text, self.open_connections_list_text], wrap=False)
+        connections_col1 = Column(controls=[self.open_connections_length_text, self.open_connections_list_text],
+                                  wrap=False)
         self.page.add(connections_col1)
 
     def __draw_message_list(self) -> None:
@@ -200,7 +206,8 @@ class ServerGUI:
     def __call__(self, flet_page: ft.Page) -> None:
         """Create the page and add controls to it on call."""
         self.page = flet_page
-        self.page.fonts = {"RobotoSlab": "https://github.com/google/fonts/raw/main/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf"}
+        self.page.fonts = {
+            "RobotoSlab": "https://github.com/google/fonts/raw/main/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf"}
         self.__init_window()
         self.__draw_app_bar()
         self.__draw_server_controls()

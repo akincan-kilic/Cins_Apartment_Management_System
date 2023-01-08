@@ -1,14 +1,9 @@
-import threading
-import multiprocessing
-
-from Server import Server
-
-import flet as ft
 import custom_exceptions as ce
+from Server import Server
 
 
 class ServerController:
-    def __init__(self, host:str, port:int):
+    def __init__(self, host: str, port: int):
         self.host = host
         self.port = port
         self.server = Server(self.host, self.port)
@@ -38,7 +33,7 @@ class ServerController:
         """
         if not self.server_running:
             raise ce.ServerNotRunningError("Server is not running.")
-        if (server_closed := self.server.server_management_thread.command_stop_server()):
+        if server_closed := self.server.server_management_thread.command_stop_server():
             self.server_running = False
             return True
         else:

@@ -7,5 +7,6 @@
     - Make the chat messages look better. Maybe add a divider between the messages.
     - Since messages are stored as ft.Text() objects, maybe change their color based on the sender.
     - Or make the timestamps appear bold and the messages appear normal. Or change their color idk.
+    - Add update rate to the server GUI.
     - Write a report.
 """

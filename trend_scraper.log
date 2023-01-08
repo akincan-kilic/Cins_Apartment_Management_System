@@ -1,0 +1,74 @@
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Could not register the client. Reason: Client is not running.
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 138, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 42, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Could not register the client. Reason: Client is not running.
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 138, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 42, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Gürültücü Komşu and apartment no: 282
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: 04:32:33 Gürültücü Komşu from apartment no 282 says: kes lan
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Creating a snackbar with message: An error occurred: Client is already running.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Creating a snackbar with message: An error occurred: Client is already running.
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Could not register the client. Reason: Client is not running.
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 138, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 42, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: The client is not running.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Could not register the client. Reason: [Errno 32] Broken pipe
+[ERROR] main: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 138, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 43, in register_client
+    self.client.register_client(card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/Client.py", line 60, in register_client
+    self.socket.send(message_to_send.encode())
+BrokenPipeError: [Errno 32] Broken pipe
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button

@@ -1,21 +1,20 @@
-import sys
-import time
-import socket
-import datetime
-import threading
 import multiprocessing
-
-from Weather import WeatherDataFetcher
-from Currency import CurrencyDataFetcher
-from ClientCard import ClientCard
+import socket
+import sys
+import threading
+import time
 
 import AkinProtocol
-import custom_exceptions as ce
 import Utility
+import custom_exceptions as ce
+from ClientCard import ClientCard
+from Currency import CurrencyDataFetcher
+from Weather import WeatherDataFetcher
 
 
 class Server(threading.Thread):
     """A threaded server that handles multiple clients"""
+
     def __init__(self, host, port):
         super().__init__()
         self.host = host
@@ -34,12 +33,12 @@ class Server(threading.Thread):
 
     def run(self):
         self.__bind_and_listen()
-        self.server_management_thread.start() # Start a thread to check for closed connections
+        self.server_management_thread.start()  # Start a thread to check for closed connections
         while self.running_flag:
             try:
                 self.__accept_client_to_a_new_thread()
             except ConnectionAbortedError:
-                break # Server is closed
+                break  # Server is closed
         sys.exit(0)
 
     def stop_server(self):
@@ -48,7 +47,7 @@ class Server(threading.Thread):
         self.server_socket.close()
         for client in self.open_connection_threads:
             client.close_connection()
-        exit(0)
+        sys.exit(0)
 
     def __bind_and_listen(self):
         """Binds the server to the given host and port and starts listening for connections"""
@@ -95,16 +94,19 @@ class Server(threading.Thread):
     def get_currency(self) -> dict:
         return self.currency
 
+
 class ClientThread(threading.Thread):
     """A thread that handles a single client connection"""
-    def __init__(self, client_socket:socket.socket, client_address, msg_queue: multiprocessing.Queue, weather:dict, currency:dict, logger:multiprocessing.Queue):
+
+    def __init__(self, client_socket: socket.socket, client_address, msg_queue: multiprocessing.Queue, weather: dict,
+                 currency: dict, logger: multiprocessing.Queue):
         super().__init__()
         self.client_socket = client_socket
         self.client_address = client_address
         self.message_queue = msg_queue
         self.weather = weather
         self.currency = currency
-        self.card: ClientCard = None # type: ignore
+        self.card: ClientCard = None  # type: ignore
         self.subscribed_to_message_channel = False
         self.connection_open_flag = False
 
@@ -121,11 +123,11 @@ class ClientThread(threading.Thread):
             self.__handle_client_message(client_msg=client_msg)
         sys.exit(0)
 
-    def update_weather(self, weather:dict) -> None:
+    def update_weather(self, weather: dict) -> None:
         """Updates the weather data that the client will receive when requested"""
         self.weather = weather
 
-    def update_currency(self, currency:dict) -> None:
+    def update_currency(self, currency: dict) -> None:
         """Updates the currency data that the client will receive when requested"""
         self.currency = currency
 
@@ -136,7 +138,7 @@ class ClientThread(threading.Thread):
         self.connection_open_flag = False
         self.client_socket.close()
 
-    def __handle_client_message(self, client_msg:str) -> None:
+    def __handle_client_message(self, client_msg: str) -> None:
         if client_msg.startswith(AkinProtocol.REGISTER_USER):
             self.__handle_register_user(client_msg)
 
@@ -162,23 +164,23 @@ class ClientThread(threading.Thread):
             except BrokenPipeError:
                 self.connection_open_flag = False
 
-    def __handle_register_user(self, client_msg:str) -> None:
+    def __handle_register_user(self, client_msg: str) -> None:
         """Handles the register user command"""
         card_details = AkinProtocol.parse_register_response(client_msg)
         self.card = ClientCard(card_details['name'], int(card_details['apartment_no']))
         self.client_socket.send(self.card.id.encode())
 
-    def __handle_subscribe_request(self, client_msg:str) -> None:
+    def __handle_subscribe_request(self, client_msg: str) -> None:
         """Handles the subscribe request command, this will add the client to the message channel"""
         self.subscribed_to_message_channel = True
         self.client_socket.send(AkinProtocol.OK.encode())
 
-    def __handle_unsubscribe_request(self, client_msg:str) -> None:
+    def __handle_unsubscribe_request(self, client_msg: str) -> None:
         """Handles the unsubscribe request command, this will remove the client from the message channel"""
         self.subscribed_to_message_channel = False
         self.client_socket.send(AkinProtocol.OK.encode())
 
-    def __handle_chat_message(self, client_msg:str) -> None:
+    def __handle_chat_message(self, client_msg: str) -> None:
         if self.card is None:
             error_message = f"{AkinProtocol.ERROR}You are not registered"
             self.client_socket.send(error_message.encode())
@@ -187,7 +189,7 @@ class ClientThread(threading.Thread):
         card_name = str(self.card.name)
         apartment_no = str(self.card.apartment_no)
 
-        chat_message = f"{Utility.get_simple_time()} {card_name} from apartment no {apartment_no} says: {chat_message}"
+        chat_message = f"[{Utility.get_simple_time()}] [Apt No:{apartment_no}] {card_name}: {chat_message}"
         chat_message = AkinProtocol.construct_chat_message(chat_message)
 
         if self.subscribed_to_message_channel:
@@ -197,12 +199,12 @@ class ClientThread(threading.Thread):
             error_message = f"{AkinProtocol.ERROR}You are not subscribed to the message channel"
             self.client_socket.send(error_message.encode())
 
-    def __handle_get_weather(self, client_msg:str) -> None:
+    def __handle_get_weather(self, client_msg: str) -> None:
         """Handles the get weather command"""
         weather_message = AkinProtocol.construct_weather_response(self.weather)
         self.client_socket.send(weather_message.encode())
 
-    def __handle_get_currency(self, client_msg:str) -> None:
+    def __handle_get_currency(self, client_msg: str) -> None:
         """Handles the get currency command"""
         currency_message = AkinProtocol.construct_currency_response(self.currency)
         self.client_socket.send(currency_message.encode())
@@ -210,10 +212,11 @@ class ClientThread(threading.Thread):
 
 class ServerManagementThread(threading.Thread):
     """A thread to manage the server. This thread will remove closed connections and update weather and currency for clients"""
-    def __init__(self, server:Server):
+
+    def __init__(self, server: Server):
         super().__init__(daemon=True)
         self.server = server
-        self.UPDATE_RATE = 180 # Updates the weather and currency data every X seconds
+        self.UPDATE_RATE = 180  # Updates the weather and currency data every X seconds
         self.running_flag = True
         self.logger = self.server.logger
 
@@ -285,9 +288,11 @@ class ServerManagementThread(threading.Thread):
             time.sleep(self.UPDATE_RATE)
             self.logger.put("Updated currency cached on the server from doviz.com")
 
+
 def main():
     server = Server('0.0.0.0', 9000)
     server.start()
+
 
 if __name__ == '__main__':
     main()

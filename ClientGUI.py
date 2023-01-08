@@ -1,32 +1,16 @@
-import asyncio
-import datetime
-import logging
 import multiprocessing
+import threading
 import time
 
 import flet as ft
 from flet import Column, Row
 
-from ClientCard import ClientCard
-from ClientController import ClientController
 import Utility
 import custom_exceptions as ce
-import threading
+from ClientCard import ClientCard
+from ClientController import ClientController
 
-# Logger configuration.
-logging.basicConfig(
-    format="[%(levelname)s] %(name)s: %(message)s",
-    datefmt="%H:%M:%S",
-    handlers=[
-        logging.FileHandler("trend_scraper.log"),
-        logging.StreamHandler()
-    ]
-)
-
-logging.getLogger('flet').setLevel(logging.ERROR)
-logging.getLogger('snscrape').setLevel(logging.ERROR)
-logger = logging.getLogger('main')
-logger.setLevel(logging.DEBUG)
+logger = Utility.get_logger()
 
 
 class ClientGUI:
@@ -40,33 +24,40 @@ class ClientGUI:
         ### Server Logic ###
         self.host = self.DEFAULT_HOST
         self.port = self.DEFAULT_PORT
-        self.group_chat_message_queue: multiprocessing.Queue = None # type: ignore
+        self.group_chat_message_queue: multiprocessing.Queue = None  # type: ignore
         self.running_flag = True
 
         ### CONSTANTS ###
         self.APP_NAME = "Cins Apartment Resident Client"
 
         ### Main Application ###
-        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab", width=800, text_align=ft.TextAlign.LEFT)
+        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab",
+                                 width=800, text_align=ft.TextAlign.LEFT)
         self.app_icon = ft.Icon(name=ft.icons.ACCESS_ALARM, size=50)
-        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme", icon_size=24, on_click=self.__switch_theme)
-        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28, on_click=self.__on_click_exit_button)
+        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme",
+                                            icon_size=24, on_click=self.__switch_theme)
+        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28,
+                                         on_click=self.__on_click_exit_button)
 
         self.host_textbox = ft.TextField(label="Host", value=str(self.DEFAULT_HOST), width=200)
         self.port_textbox = ft.TextField(label="Port", value=str(self.DEFAULT_PORT), width=200)
         self.start_button = ft.ElevatedButton(text="Connect to Server", on_click=self.__on_click_start_button)
-        self.close_connection_button = ft.ElevatedButton(text="Close Connection", on_click=self.__on_click_close_connection_button)
+        self.close_connection_button = ft.ElevatedButton(text="Disconnect from Server",
+                                                         on_click=self.__on_click_close_connection_button,
+                                                         disabled=True)
 
         self.client_card_image = ft.Image(src='CinsApartmentCard_Transparent.png')
         self.client_card_name = ft.TextField(label="Client Name", value=self.DEFAULT_CLIENT_NAME, width=200)
         self.client_card_no = ft.TextField(label="Client Apartment No", value=str(self.DEFAULT_CLIENT_NO), width=200)
-        self.register_client_button = ft.ElevatedButton(text="Register Client", on_click=self.__on_click_register_client_button)
+        self.register_client_button = ft.ElevatedButton(text="Register Client by Scanning Their Card on the Reader",
+                                                        on_click=self.__on_click_register_client_button)
         self.client_card = self.__generate_client_card()
 
         self.msg_list = ft.ListView(expand=1, spacing=10, padding=20)
         self.message_input_field = ft.TextField(label="Enter a message to send...", value="", disabled=True, width=500)
         self.send_message_button = ft.IconButton(icon=ft.icons.SEND, on_click=self.__on_clicked_message_send_button)
-        self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe to Messages", on_click=self.__on_click_subscribe_to_messages_button)
+        self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe to Messages",
+                                                              on_click=self.__on_click_subscribe_to_messages_button)
 
         self.controller = ClientController(host=self.host,
                                            port=self.port)
@@ -136,7 +127,10 @@ class ClientGUI:
         try:
             self.client_card = self.__generate_client_card()
             self.controller.register_client(self.client_card)
-            self.__create_snackbar(f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
+            self.register_client_button.disabled = True
+            self.register_client_button.text = "Client has been successfully registered by the Server!"
+            self.__create_snackbar(
+                f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
         except Exception as e:
             self.__create_snackbar(f"Could not register the client. Reason: {e}")
             logger.exception(e.with_traceback(e.__traceback__))
@@ -188,6 +182,8 @@ class ClientGUI:
         logger.debug("On Click: Close Connection Button")
         self.start_button.disabled = False
         self.start_button.text = "Connect to Server"
+        self.controller.stop_client()
+        self.running_flag = False
         self.page.update()
 
     def __on_clicked_message_send_button(self, _) -> None:
@@ -211,6 +207,7 @@ class ClientGUI:
             self.controller.start_client(self.host, self.port)
             self.start_button.text = "Connected to Server!"
             self.start_button.disabled = True
+            self.close_connection_button.disabled = False
             self.page.update()
         except Exception as e:
             self.__create_snackbar(f"An error occurred: {e}")
@@ -306,7 +303,9 @@ class ClientGUI:
         self.__draw_app_bar()
         info_column = Row(controls=[self.weather_container, self.currency_container], wrap=False)
         host_port_row = Row(controls=[self.host_textbox, self.port_textbox], wrap=False)
-        client_buttons_row = Row(controls=[self.subscribe_to_messages_button, self.start_button, self.close_connection_button], wrap=False, alignment=ft.MainAxisAlignment.SPACE_EVENLY)
+        client_buttons_row = Row(
+            controls=[self.subscribe_to_messages_button, self.start_button, self.close_connection_button], wrap=False,
+            alignment=ft.MainAxisAlignment.SPACE_EVENLY)
         host_port_connection_row = Column(controls=[host_port_row, client_buttons_row], wrap=False)
         chat_box_container = ft.Container(content=self.msg_list,
                                           ink=True,
@@ -319,17 +318,19 @@ class ClientGUI:
                                                                      end=ft.alignment.bottom_center,
                                                                      colors=[ft.colors.WHITE, ft.colors.BLUE_GREY_100]))
         message_box_row = Row(controls=[self.message_input_field, self.send_message_button], wrap=False)
-        host_port_connection_chat_column = Column(controls=[host_port_connection_row, chat_box_container, message_box_row], wrap=False)
+        host_port_connection_chat_column = Column(
+            controls=[host_port_connection_row, chat_box_container, message_box_row], wrap=False)
         card_name_no_row = Row(controls=[self.client_card_name, self.client_card_no], wrap=False)
         client_card_column = Column(controls=[self.client_card_image, card_name_no_row], wrap=False)
-        info_with_client_card_column = Column(controls=[client_card_column, info_column, self.register_client_button], wrap=False)
+        info_with_client_card_column = Column(controls=[client_card_column, info_column, self.register_client_button],
+                                              wrap=False)
 
-        left_of_page_container = ft.Container(width=self.page.window_width / 2 - 30, # type: ignore
+        left_of_page_container = ft.Container(width=self.page.window_width / 2 - 30,  # type: ignore
                                               height=self.page.window_height,
                                               border_radius=ft.border_radius.all(20),
                                               padding=ft.padding.all(10))
 
-        right_of_page_container = ft.Container(width=self.page.window_width / 2 - 30, # type: ignore
+        right_of_page_container = ft.Container(width=self.page.window_width / 2 - 30,  # type: ignore
                                                height=self.page.window_height,
                                                border_radius=ft.border_radius.all(20),
                                                padding=ft.padding.all(10))
