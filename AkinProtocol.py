@@ -1,3 +1,5 @@
+from ClientCard import ClientCard
+
 DELIMITER = "@@|<<!?!>>|@@"
 
 WEATHER = "WTH"
@@ -27,10 +29,10 @@ def construct_weather_response(data):
 def construct_currency_response(data):
     return f"{CURRENCY}{DELIMITER}{data}"
 
-def register_client_to_server(card_data: dict):
+def register_client_to_server(card: ClientCard):
     """Register a client to the server
     card_data: dict with keys 'name' and 'apartment_no'"""
-    return f"{REGISTER_USER}{card_data['name']}{DELIMITER}{card_data['apartment_no']}"
+    return f"{REGISTER_USER}{card.name}{DELIMITER}{card.apartment_no}"
 
 def parse_register_response(data):
     """Parse the response from the server after registering a client"""

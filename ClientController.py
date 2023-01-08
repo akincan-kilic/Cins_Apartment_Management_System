@@ -6,10 +6,10 @@ import threading
 
 class ClientController:
     """This class is responsible for communucating the Client code with the GUI of the client. Following the MVC pattern."""
-    def __init__(self, host:str, port:int, card:ClientCard):
+    def __init__(self, host:str, port:int):
         self.host = host
         self.port = port
-        self.card = card
+        self.card = None
         self.client_running = False
         self.message_queue = None
 
@@ -31,6 +31,17 @@ class ClientController:
             return True
         except ce.InvalidPortError as e:
             raise e
+
+    def register_client(self, card: ClientCard) -> bool:
+        """Registers the client. Returns True if the client is registered successfully, otherwise raises an exception.
+        Exceptions:
+            ClientNotRunningError: If the client is not running.
+            ClientCouldNotRegisterError: If the client could not register.
+        """
+        if not self.client_running:
+            raise ce.ClientNotRunningError("Client is not running.")
+        self.client.register_client(card)
+        return True
 
     def get_message_queue(self) -> multiprocessing.Queue:
         """Returns the message queue."""
@@ -62,6 +73,7 @@ class ClientController:
         if not self.client_running:
             raise ce.ClientNotRunningError("Client is not running.")
         self.client.send_chat_message(message)
+        return True
 
     def subscribe_to_message_channel(self) -> bool:
         """Subscribes to the message channel. Returns True if the client is subscribed successfully, otherwise raises an exception.

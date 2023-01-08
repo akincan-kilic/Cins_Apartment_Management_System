@@ -55,6 +55,10 @@ class Client:
         self.socket.send(message_to_send.encode())
         return True
 
+    def register_client(self, card):
+        message_to_send = AkinProtocol.register_client_to_server(card)
+        self.socket.send(message_to_send.encode())
+
     def close_connection(self):
         self.client_manager_thread.stop()
         self.socket.close()

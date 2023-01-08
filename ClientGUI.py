@@ -9,6 +9,7 @@ from flet import Column, Row
 
 from ClientCard import ClientCard
 from ClientController import ClientController
+import Utility
 import custom_exceptions as ce
 import threading
 
@@ -32,14 +33,15 @@ class ClientGUI:
     """GUI for the Tweet Classifier App."""
     DEFAULT_HOST = "0.0.0.0"
     DEFAULT_PORT = 8080
-    DEFAULT_CLIENT_NAME = "Test"
-    DEFAULT_CLIENT_NO = 1
+    DEFAULT_CLIENT_NAME = Utility.get_random_card_name()
+    DEFAULT_CLIENT_NO = Utility.get_random_card_apartment_no()
 
     def __init__(self):
         ### Server Logic ###
         self.host = self.DEFAULT_HOST
         self.port = self.DEFAULT_PORT
-        self.group_chat_message_queue: multiprocessing.Queue = None
+        self.group_chat_message_queue: multiprocessing.Queue = None # type: ignore
+        self.running_flag = True
 
         ### CONSTANTS ###
         self.APP_NAME = "Cins Apartment Resident Client"
@@ -58,17 +60,16 @@ class ClientGUI:
         self.client_card_image = ft.Image(src='CinsApartmentCard_Transparent.png')
         self.client_card_name = ft.TextField(label="Client Name", value=self.DEFAULT_CLIENT_NAME, width=200)
         self.client_card_no = ft.TextField(label="Client Apartment No", value=str(self.DEFAULT_CLIENT_NO), width=200)
-        self.client_card = ClientCard(
-            self.client_card_name.value, self.client_card_no.value)
+        self.register_client_button = ft.ElevatedButton(text="Register Client", on_click=self.__on_click_register_client_button)
+        self.client_card = self.__generate_client_card()
 
         self.msg_list = ft.ListView(expand=1, spacing=10, padding=20)
         self.message_input_field = ft.TextField(label="Enter a message to send...", value="", disabled=True, width=500)
         self.send_message_button = ft.IconButton(icon=ft.icons.SEND, on_click=self.__on_clicked_message_send_button)
-        self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe", on_click=self.__on_click_subscribe_to_messages_button)
+        self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe to Messages", on_click=self.__on_click_subscribe_to_messages_button)
 
         self.controller = ClientController(host=self.host,
-                                           port=self.port,
-                                           card=self.client_card)
+                                           port=self.port)
 
         ### Weather Display ###
         self.weather_text = ft.Text(value="Weather from Server", style=ft.TextThemeStyle.LABEL_MEDIUM,
@@ -123,9 +124,24 @@ class ClientGUI:
         self.dollar_row = Row([self.dollar_image, self.dollar_text])
         self.currency_column = Column(controls=[self.currency_text, self.euro_row, self.dollar_row], wrap=False)
         self.currency_container.content = self.currency_column
-        self.__post_init__()
+        self.__start_helper_threads()
 
-    def __post_init__(self):
+    def __generate_client_card(self) -> ClientCard:
+        """Generates a client card."""
+        return ClientCard(str(self.client_card_name.value), int(str(self.client_card_no.value)))
+
+    def __on_click_register_client_button(self, _) -> None:
+        """Registers a client."""
+        logger.debug("On Click: Register Client Button")
+        try:
+            self.client_card = self.__generate_client_card()
+            self.controller.register_client(self.client_card)
+            self.__create_snackbar(f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
+        except Exception as e:
+            self.__create_snackbar(f"Could not register the client. Reason: {e}")
+            logger.exception(e.with_traceback(e.__traceback__))
+
+    def __start_helper_threads(self):
         """Called after the initialization of the application."""
         threading.Thread(target=self.__update_weather_and_currency).start()
         threading.Thread(target=self.__update_group_chat).start()
@@ -137,27 +153,35 @@ class ClientGUI:
             self.__create_snackbar("The client is not running.")
             return
         self.group_chat_message_queue = self.controller.get_message_queue()
-        if self.subscribe_to_messages_button.text == "Unsubscribe":
+        if self.subscribe_to_messages_button.text == "Unsubscribe from Messages":
             try:
                 self.controller.unsubscribe_from_message_channel()
             except ce.ClientNotRunningError:
                 self.__create_snackbar("The client is not running.")
                 return
-            self.message_input_field.disabled = True
-            self.subscribe_to_messages_button.text = "Subscribe"
-            self.__create_snackbar(
-                "Unsubscribed from the apartment group chat.")
-
-        elif self.subscribe_to_messages_button.text == "Subscribe":
+            self.__toggle_subscribe_button_action(
+                True,
+                "Subscribe to Messages",
+                "Unsubscribed from the apartment group chat.",
+            )
+        elif self.subscribe_to_messages_button.text == "Subscribe to Messages":
             try:
                 self.controller.subscribe_to_message_channel()
             except ce.ClientNotRunningError:
                 self.__create_snackbar("The client is not running.")
                 return
-            self.subscribe_to_messages_button.text = "Unsubscribe"
-            self.message_input_field.disabled = False
-            self.__create_snackbar("Subscribed to the apartment group chat.")
+            self.__toggle_subscribe_button_action(
+                False,
+                "Unsubscribe from Messages",
+                "Subscribed to the apartment group chat.",
+            )
         self.page.update()
+
+    def __toggle_subscribe_button_action(self, disable_inputs_bool, button_text, snackbar_message):
+        self.message_input_field.disabled = disable_inputs_bool
+        self.send_message_button.disabled = disable_inputs_bool
+        self.subscribe_to_messages_button.text = button_text
+        self.__create_snackbar(snackbar_message)
 
     def __on_click_close_connection_button(self, _) -> None:
         """Closes the connection to the server."""
@@ -175,12 +199,8 @@ class ClientGUI:
         self.page.update()
 
     def update_msg_list(self, message: str) -> None:
-        self.msg_list.controls.append(ft.Text(f"{self.get_time()}: {message}"))
+        self.msg_list.controls.append(ft.Text(f"{message}"))
         self.page.update()
-
-    def get_time(self) -> str:
-        """Returns the current time in the format [DD-MM-YYYY] | [HH:MM:SS]"""
-        return datetime.datetime.now().strftime("%H:%M:%S")
 
     def __on_click_start_button(self, _) -> None:
         """Starts the server."""
@@ -198,8 +218,7 @@ class ClientGUI:
     def __on_click_exit_button(self, _) -> None:
         """Closes the application window."""
         logger.debug("On Click: Exit Button")
-        for thread in threading.enumerate():
-            thread.join()
+        self.running_flag = False
         self.page.window_destroy()
 
     def __create_snackbar(self, message: str) -> None:
@@ -240,7 +259,7 @@ class ClientGUI:
 
     def __update_weather_and_currency(self) -> None:
         """Run this function every second on a separate thread to update the weather and currency information."""
-        while True:
+        while self.running_flag:
             # logger.debug("Updating weather and currency information...")
             try:
                 weather_data = self.controller.get_weather()
@@ -253,7 +272,7 @@ class ClientGUI:
 
     def __update_group_chat(self) -> None:
         """Run this function every second on a separate thread to update the group chat."""
-        while True:
+        while self.running_flag:
             if self.controller.client_running:
                 # logger.debug("Updating group chat...")
                 if self.group_chat_message_queue is None:
@@ -303,14 +322,14 @@ class ClientGUI:
         host_port_connection_chat_column = Column(controls=[host_port_connection_row, chat_box_container, message_box_row], wrap=False)
         card_name_no_row = Row(controls=[self.client_card_name, self.client_card_no], wrap=False)
         client_card_column = Column(controls=[self.client_card_image, card_name_no_row], wrap=False)
-        info_with_client_card_column = Column(controls=[client_card_column, info_column], wrap=False)
+        info_with_client_card_column = Column(controls=[client_card_column, info_column, self.register_client_button], wrap=False)
 
-        left_of_page_container = ft.Container(width=self.page.window_width / 2 - 30,
+        left_of_page_container = ft.Container(width=self.page.window_width / 2 - 30, # type: ignore
                                               height=self.page.window_height,
                                               border_radius=ft.border_radius.all(20),
                                               padding=ft.padding.all(10))
 
-        right_of_page_container = ft.Container(width=self.page.window_width / 2 - 30,
+        right_of_page_container = ft.Container(width=self.page.window_width / 2 - 30, # type: ignore
                                                height=self.page.window_height,
                                                border_radius=ft.border_radius.all(20),
                                                padding=ft.padding.all(10))

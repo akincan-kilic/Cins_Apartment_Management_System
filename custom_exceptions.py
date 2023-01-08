@@ -33,3 +33,9 @@ class ClientCouldNotSendMessageError(Exception):
 
 class MessageQueueNotInitializedError(Exception):
     pass
+
+class ApartmentNoShouldBeIntegerError(Exception):
+    pass
+
+class NameShouldBeStringError(Exception):
+    pass

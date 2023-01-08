@@ -1,21 +1,26 @@
-import multiprocessing
-import threading
-import socket
+import sys
 import time
+import socket
+import datetime
+import threading
+import multiprocessing
+
 from Weather import WeatherDataFetcher
 from Currency import CurrencyDataFetcher
-import AkinProtocol
 from ClientCard import ClientCard
+
+import AkinProtocol
 import custom_exceptions as ce
-import sys
+import Utility
 
 
-class ThreadedServer(threading.Thread):
+class Server(threading.Thread):
     """A threaded server that handles multiple clients"""
     def __init__(self, host, port):
         super().__init__()
         self.host = host
         self.port = port
+        self.running_flag = True
         self.msg_queue = multiprocessing.Queue()
         self.logger = multiprocessing.Queue()
         self.open_connection_threads: list[ClientThread] = []
@@ -26,7 +31,6 @@ class ThreadedServer(threading.Thread):
         self.group_chat_updater_thread.start()
         self.weather = {}
         self.currency = {}
-        self.running_flag = False
 
     def run(self):
         self.__bind_and_listen()
@@ -43,7 +47,7 @@ class ThreadedServer(threading.Thread):
         self.running_flag = False
         self.server_socket.close()
         for client in self.open_connection_threads:
-            client.client_socket.close()
+            client.close_connection()
         exit(0)
 
     def __bind_and_listen(self):
@@ -53,7 +57,7 @@ class ThreadedServer(threading.Thread):
             self.server_socket.bind((self.host, self.port))
             self.server_socket.listen(10)
             self.running_flag = True
-            self.logger.put(f"Server started on [{self.host}:{self.port}]")
+            self.logger.put(f"Server successfully started on [{self.host}:{self.port}]")
             self.logger.put("Waiting for a connection...")
         except socket.error as e:
             raise ce.InvalidPortError(f"Error binding to port {self.port}: {e}") from e
@@ -67,7 +71,7 @@ class ThreadedServer(threading.Thread):
         self.open_connection_threads.append(client_thread)
 
     def __update_group_chat(self):
-        while True:
+        while self.running_flag:
             if not self.msg_queue.empty():
                 msg = self.msg_queue.get()
                 for client in self.open_connection_threads:
@@ -93,7 +97,6 @@ class ThreadedServer(threading.Thread):
 
 class ClientThread(threading.Thread):
     """A thread that handles a single client connection"""
-    card: ClientCard
     def __init__(self, client_socket:socket.socket, client_address, msg_queue: multiprocessing.Queue, weather:dict, currency:dict, logger:multiprocessing.Queue):
         super().__init__()
         self.client_socket = client_socket
@@ -101,6 +104,7 @@ class ClientThread(threading.Thread):
         self.message_queue = msg_queue
         self.weather = weather
         self.currency = currency
+        self.card: ClientCard = None # type: ignore
         self.subscribed_to_message_channel = False
         self.connection_open_flag = False
 
@@ -133,7 +137,7 @@ class ClientThread(threading.Thread):
         self.client_socket.close()
 
     def __handle_client_message(self, client_msg:str) -> None:
-        if client_msg == AkinProtocol.REGISTER_USER:
+        if client_msg.startswith(AkinProtocol.REGISTER_USER):
             self.__handle_register_user(client_msg)
 
         elif client_msg == AkinProtocol.WEATHER_GET:
@@ -161,7 +165,7 @@ class ClientThread(threading.Thread):
     def __handle_register_user(self, client_msg:str) -> None:
         """Handles the register user command"""
         card_details = AkinProtocol.parse_register_response(client_msg)
-        self.card = ClientCard(card_details['name'], card_details['apartment_nos'])
+        self.card = ClientCard(card_details['name'], int(card_details['apartment_no']))
         self.client_socket.send(self.card.id.encode())
 
     def __handle_subscribe_request(self, client_msg:str) -> None:
@@ -175,11 +179,15 @@ class ClientThread(threading.Thread):
         self.client_socket.send(AkinProtocol.OK.encode())
 
     def __handle_chat_message(self, client_msg:str) -> None:
+        if self.card is None:
+            error_message = f"{AkinProtocol.ERROR}You are not registered"
+            self.client_socket.send(error_message.encode())
+            return
         chat_message = AkinProtocol.strip_delimiter(client_msg)
-        # message_owner_name = str(self.card)
-        message_owner_name = 'AKIN'
-        # print(type(self.client_address))
-        chat_message = f"{message_owner_name}: {chat_message}"
+        card_name = str(self.card.name)
+        apartment_no = str(self.card.apartment_no)
+
+        chat_message = f"{Utility.get_simple_time()} {card_name} from apartment no {apartment_no} says: {chat_message}"
         chat_message = AkinProtocol.construct_chat_message(chat_message)
 
         if self.subscribed_to_message_channel:
@@ -202,7 +210,7 @@ class ClientThread(threading.Thread):
 
 class ServerManagementThread(threading.Thread):
     """A thread to manage the server. This thread will remove closed connections and update weather and currency for clients"""
-    def __init__(self, server:ThreadedServer):
+    def __init__(self, server:Server):
         super().__init__(daemon=True)
         self.server = server
         self.UPDATE_RATE = 180 # Updates the weather and currency data every X seconds
@@ -218,13 +226,7 @@ class ServerManagementThread(threading.Thread):
         update_weather_thread.start()
         update_currency_thread.start()
 
-        while True:
-            if not self.running_flag:
-                # Close all the threads running in the background
-                # remove_closed_connections_thread.join(timeout=1)
-                # update_weather_thread.join(timeout=1)
-                # update_currency_thread.join(timeout=1)
-                sys.exit(0)
+        while self.running_flag:
             if __name__ == '__main__':
                 self.__console_command_listener()
             time.sleep(1)
@@ -258,7 +260,7 @@ class ServerManagementThread(threading.Thread):
 
     def __remove_stopped_connections(self):
         """Removes stopped connections from the list of open connections"""
-        while True:
+        while self.running_flag:
             time.sleep(0.5)
             for thread in self.server.open_connection_threads:
                 if not thread.is_connection_open() or not thread.is_alive():
@@ -267,7 +269,7 @@ class ServerManagementThread(threading.Thread):
 
     def __update_weather_for_clients(self):
         """Updates the weather for all client threads"""
-        while True:
+        while self.running_flag:
             self.server.update_weather()
             for thread in self.server.open_connection_threads:
                 thread.update_weather(self.server.get_weather())
@@ -276,7 +278,7 @@ class ServerManagementThread(threading.Thread):
 
     def __update_currency_for_clients(self):
         """Updates the currency for all client threads"""
-        while True:
+        while self.running_flag:
             self.server.update_currency()
             for thread in self.server.open_connection_threads:
                 thread.update_currency(self.server.get_currency())
@@ -284,7 +286,7 @@ class ServerManagementThread(threading.Thread):
             self.logger.put("Updated currency cached on the server from doviz.com")
 
 def main():
-    server = ThreadedServer('0.0.0.0', 9000)
+    server = Server('0.0.0.0', 9000)
     server.start()
 
 if __name__ == '__main__':

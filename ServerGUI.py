@@ -4,8 +4,9 @@ import datetime
 
 from flet import Row, Column
 import logging
-from Server import ThreadedServer
+from Server import Server
 from ServerController import ServerController
+import Utility
 import custom_exceptions as ce
 import threading
 import sys
@@ -30,7 +31,7 @@ class ServerGUI:
     """GUI for the Tweet Classifier App."""
     DEFAULT_HOST = "0.0.0.0"
     DEFAULT_PORT = 8080
-    server: ThreadedServer
+    server: Server
     def __init__(self):
         self.host = self.DEFAULT_HOST
         self.port = self.DEFAULT_PORT
@@ -74,7 +75,6 @@ class ServerGUI:
         except ce.InvalidPortError as e:
             self.update_msg_list(f"Invalid port. {e}")
             return
-        self.update_msg_list(f"Server successfully started on [{self.host}:{self.port}]")
         self.__change_server_status_text(online=True)
 
     def stop_server(self):
@@ -127,12 +127,8 @@ class ServerGUI:
         self.page.update()
 
     def update_msg_list(self, message: str) -> None:
-        self.msg_list.controls.append(ft.Text(f"{self.get_time()}: {message}"))
+        self.msg_list.controls.append(ft.Text(f"{Utility.get_detailed_time()}: {message}"))
         self.page.update()
-
-    def get_time(self) -> str:
-        """Returns the current time in the format [DD-MM-YYYY] | [HH:MM:SS]"""
-        return datetime.datetime.now().strftime("%d-%m-%Y | %H:%M:%S")
 
     def __on_click_start_button(self, _) -> None:
         """Starts the server."""
@@ -142,8 +138,8 @@ class ServerGUI:
     def __on_click_exit_button(self, _) -> None:
         """Closes the application window."""
         logger.debug("On Click: Exit Button")
-        self.stop_server()
         self.page.window_destroy()
+        self.stop_server()
         sys.exit(0)
 
     def __on_click_stop_button(self, _) -> None:

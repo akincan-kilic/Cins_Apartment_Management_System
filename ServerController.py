@@ -1,15 +1,17 @@
-"""This file manages the communucation between the Server code and the GUI of the server."""
-from Server import ThreadedServer
-import flet as ft
 import threading
-import custom_exceptions as ce
 import multiprocessing
+
+from Server import Server
+
+import flet as ft
+import custom_exceptions as ce
+
 
 class ServerController:
     def __init__(self, host:str, port:int):
         self.host = host
         self.port = port
-        self.server = ThreadedServer(self.host, self.port)
+        self.server = Server(self.host, self.port)
         self.server_running = False
         self.logger = self.server.logger
 
