@@ -15,8 +15,8 @@ class Client:
         self.message = ""
         self.subscribed_to_message_channel = False
         self.client_manager_thread = ClientListenerThread(self, self.message_queue)
-        self.weather_data = {'temperature': 0, 'wind_speed': 0, 'wind_direction': 0}
-        self.currency_data = {'usd': 0, 'eur': 0}
+        self.weather_data = AkinProtocol.DEFAULT_WEATHER_DICT
+        self.currency_data = AkinProtocol.DEFAULT_CURRENCY_DICT
 
     def start(self):
         self.socket.connect((self.host, self.port))

@@ -42,3 +42,7 @@ class ServerController:
     def get_open_connections(self) -> list:
         """Returns a list of all open connections."""
         return self.server.server_management_thread.command_open_connections()
+
+    def change_update_rate(self, update_rate: int) -> None:
+        """Changes the update rate of the server."""
+        self.server.server_management_thread.command_change_update_rate(update_rate)

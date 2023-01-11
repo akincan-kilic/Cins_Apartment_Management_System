@@ -5,6 +5,7 @@ import time
 import flet as ft
 from flet import Column, Row
 
+import AkinProtocol
 import Utility
 import custom_exceptions as ce
 from ClientCard import ClientCard
@@ -14,33 +15,36 @@ logger = Utility.get_logger()
 
 
 class ClientGUI:
-    """GUI for the Tweet Classifier App."""
-    DEFAULT_HOST = "0.0.0.0"
-    DEFAULT_PORT = 8080
     DEFAULT_CLIENT_NAME = Utility.get_random_card_name()
     DEFAULT_CLIENT_NO = Utility.get_random_card_apartment_no()
+    WINDOW_HEIGHT = 780
+    WINDOW_WIDTH = 1200
+    APP_NAME = "Cins Apartment Resident Client"
 
     def __init__(self):
+        self.white_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
+                                                end=ft.alignment.bottom_center,
+                                                colors=[ft.colors.WHITE, ft.colors.BLUE_GREY_100])
+        self.dark_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
+                                               end=ft.alignment.bottom_center,
+                                               colors=[ft.colors.BLACK, ft.colors.BLUE_GREY_100])
         ### Server Logic ###
-        self.host = self.DEFAULT_HOST
-        self.port = self.DEFAULT_PORT
+        self.host = AkinProtocol.DEFAULT_HOST
+        self.port = AkinProtocol.DEFAULT_PORT
         self.group_chat_message_queue: multiprocessing.Queue = None  # type: ignore
         self.running_flag = True
-
-        ### CONSTANTS ###
-        self.APP_NAME = "Cins Apartment Resident Client"
 
         ### Main Application ###
         self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab",
                                  width=800, text_align=ft.TextAlign.LEFT)
         self.app_icon = ft.Icon(name=ft.icons.ACCESS_ALARM, size=50)
         self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme",
-                                            icon_size=24, on_click=self.__switch_theme)
+                                            icon_size=24, on_click=self.__on_click_switch_theme)
         self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28,
                                          on_click=self.__on_click_exit_button)
 
-        self.host_textbox = ft.TextField(label="Host", value=str(self.DEFAULT_HOST), width=200)
-        self.port_textbox = ft.TextField(label="Port", value=str(self.DEFAULT_PORT), width=200)
+        self.host_textbox = ft.TextField(label="Host", value=str(self.host), width=200)
+        self.port_textbox = ft.TextField(label="Port", value=str(self.port), width=200)
         self.start_button = ft.ElevatedButton(text="Connect to Server", on_click=self.__on_click_start_button)
         self.close_connection_button = ft.ElevatedButton(text="Disconnect from Server",
                                                          on_click=self.__on_click_close_connection_button,
@@ -55,7 +59,7 @@ class ClientGUI:
 
         self.msg_list = ft.ListView(expand=1, spacing=10, padding=20)
         self.message_input_field = ft.TextField(label="Enter a message to send...", value="", disabled=True, width=500)
-        self.send_message_button = ft.IconButton(icon=ft.icons.SEND, on_click=self.__on_clicked_message_send_button)
+        self.send_message_button = ft.IconButton(icon=ft.icons.SEND, on_click=self.__on_click_message_send_button)
         self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe to Messages",
                                                               on_click=self.__on_click_subscribe_to_messages_button)
 
@@ -65,13 +69,7 @@ class ClientGUI:
         ### Weather Display ###
         self.weather_text = ft.Text(value="Weather from Server", style=ft.TextThemeStyle.LABEL_MEDIUM,
                                     font_family="RobotoSlab", width=800, text_align=ft.TextAlign.CENTER)
-        self.weather_container = ft.Container(width=200,
-                                              height=150,
-                                              padding=ft.padding.all(10),
-                                              margin=ft.margin.all(10),
-                                              border=ft.border.all(1),
-                                              border_radius=10,
-                                              alignment=ft.alignment.top_right)
+        self.weather_container = Utility.get_info_container()
         self.weather_image = ft.Image(src='weather.png', width=50, height=50)
         self.wind_image = ft.Image(src='wind.png', width=50, height=50)
         self.weather_in_celcius_text = ft.Text(value="0.0 °C",
@@ -92,13 +90,7 @@ class ClientGUI:
         ### Currency Display ###
         self.currency_text = ft.Text(value="Currency from Server", style=ft.TextThemeStyle.LABEL_MEDIUM,
                                      font_family="RobotoSlab", width=800, text_align=ft.TextAlign.CENTER)
-        self.currency_container = ft.Container(width=200,
-                                               height=150,
-                                               padding=ft.padding.all(10),
-                                               margin=ft.margin.all(10),
-                                               border=ft.border.all(1),
-                                               border_radius=10,
-                                               alignment=ft.alignment.top_right)
+        self.currency_container = Utility.get_info_container()
         self.euro_image = ft.Image(src='euro.png', width=50, height=50)
         self.dollar_image = ft.Image(src='dollar.png', width=50, height=50)
         self.euro_text = ft.Text(value="0 €",
@@ -115,12 +107,20 @@ class ClientGUI:
         self.dollar_row = Row([self.dollar_image, self.dollar_text])
         self.currency_column = Column(controls=[self.currency_text, self.euro_row, self.dollar_row], wrap=False)
         self.currency_container.content = self.currency_column
+
+        self.chat_box_container = ft.Container(content=self.msg_list,
+                                               ink=True,
+                                               width=500,
+                                               height=400,
+                                               border_radius=ft.border_radius.all(20),
+                                               border=ft.border.all(4, ft.colors.BLACK),
+                                               padding=ft.padding.all(10),
+                                               gradient=self.white_gradient)
         self.__start_helper_threads()
 
-    def __generate_client_card(self) -> ClientCard:
-        """Generates a client card."""
-        return ClientCard(str(self.client_card_name.value), int(str(self.client_card_no.value)))
-
+    # ------------------------ #
+    # --- On Click Methods --- #
+    # ------------------------ #
     def __on_click_register_client_button(self, _) -> None:
         """Registers a client."""
         logger.debug("On Click: Register Client Button")
@@ -129,29 +129,24 @@ class ClientGUI:
             self.controller.register_client(self.client_card)
             self.register_client_button.disabled = True
             self.register_client_button.text = "Client has been successfully registered by the Server!"
-            self.__create_snackbar(
-                f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
+            Utility.create_snackbar(self.page,
+                                    f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
         except Exception as e:
-            self.__create_snackbar(f"Could not register the client. Reason: {e}")
+            Utility.create_snackbar(self.page, f"Could not register the client. Reason: {e}")
             logger.exception(e.with_traceback(e.__traceback__))
-
-    def __start_helper_threads(self):
-        """Called after the initialization of the application."""
-        threading.Thread(target=self.__update_weather_and_currency).start()
-        threading.Thread(target=self.__update_group_chat).start()
 
     def __on_click_subscribe_to_messages_button(self, _) -> None:
         """Subscribes to the server."""
         logger.debug("On Click: Subscribe Button")
         if not self.controller.client_running:
-            self.__create_snackbar("The client is not running.")
+            Utility.create_snackbar(self.page, "The client is not running.")
             return
         self.group_chat_message_queue = self.controller.get_message_queue()
         if self.subscribe_to_messages_button.text == "Unsubscribe from Messages":
             try:
                 self.controller.unsubscribe_from_message_channel()
             except ce.ClientNotRunningError:
-                self.__create_snackbar("The client is not running.")
+                Utility.create_snackbar(self.page, "The client is not running.")
                 return
             self.__toggle_subscribe_button_action(
                 True,
@@ -162,7 +157,7 @@ class ClientGUI:
             try:
                 self.controller.subscribe_to_message_channel()
             except ce.ClientNotRunningError:
-                self.__create_snackbar("The client is not running.")
+                Utility.create_snackbar(self.page, "The client is not running.")
                 return
             self.__toggle_subscribe_button_action(
                 False,
@@ -170,12 +165,6 @@ class ClientGUI:
                 "Subscribed to the apartment group chat.",
             )
         self.page.update()
-
-    def __toggle_subscribe_button_action(self, disable_inputs_bool, button_text, snackbar_message):
-        self.message_input_field.disabled = disable_inputs_bool
-        self.send_message_button.disabled = disable_inputs_bool
-        self.subscribe_to_messages_button.text = button_text
-        self.__create_snackbar(snackbar_message)
 
     def __on_click_close_connection_button(self, _) -> None:
         """Closes the connection to the server."""
@@ -186,16 +175,12 @@ class ClientGUI:
         self.running_flag = False
         self.page.update()
 
-    def __on_clicked_message_send_button(self, _) -> None:
+    def __on_click_message_send_button(self, _) -> None:
         """Sends a message to the server."""
         logger.debug("On Click: Message Send Button")
         user_message = str(self.message_input_field.value)
         self.message_input_field.value = ""
         self.controller.send_message(user_message)
-        self.page.update()
-
-    def update_msg_list(self, message: str) -> None:
-        self.msg_list.controls.append(ft.Text(f"{message}"))
         self.page.update()
 
     def __on_click_start_button(self, _) -> None:
@@ -210,7 +195,7 @@ class ClientGUI:
             self.close_connection_button.disabled = False
             self.page.update()
         except Exception as e:
-            self.__create_snackbar(f"An error occurred: {e}")
+            Utility.create_snackbar(self.page, f"An error occurred: {e}")
 
     def __on_click_exit_button(self, _) -> None:
         """Closes the application window."""
@@ -218,41 +203,21 @@ class ClientGUI:
         self.running_flag = False
         self.page.window_destroy()
 
-    def __create_snackbar(self, message: str) -> None:
-        """Creates a snackbar with the given message and displays it."""
-        logger.debug(f"Creating a snackbar with message: {message}")
-        sb = ft.SnackBar(content=ft.Text(message), action='OK',
-                         action_color=ft.colors.WHITE)
-        sb.open = True
-        self.page.add(sb)
-        self.page.update()
-
-    def __init_window(self) -> None:
-        """Initializes the window of the GUI."""
-        self.page.window_height = 780
-        self.page.window_width = 1200
-        self.page.window_title_bar_hidden = False
-        self.page.window_frameless = False
-        self.page.window_always_on_top = False
-        self.page.window_focused = True
-        self.page.window_center()
-        self.page.theme_mode = ft.ThemeMode.LIGHT
-        self.page.title = self.APP_NAME
-
-    def __switch_theme(self, _) -> None:
+    def __on_click_switch_theme(self, _) -> None:
         """Switches the theme of the GUI between light and dark."""
         logger.debug("Switching theme...")
         self.page.theme_mode = ft.ThemeMode.LIGHT if self.page.theme_mode == ft.ThemeMode.DARK else ft.ThemeMode.DARK
         self.client_card_image.src = 'CinsApartmentCard_Transparent_White.png' if self.page.theme_mode == ft.ThemeMode.DARK else 'CinsApartmentCard_Transparent.png'
+        self.chat_box_container.gradient = self.dark_gradient if self.page.theme_mode == ft.ThemeMode.DARK else self.white_gradient
         self.page.update()
 
-    def __draw_app_bar(self) -> None:
-        """Add the app bar on the page."""
-        self.page.appbar = ft.AppBar(leading=self.app_icon,
-                                     leading_width=48,
-                                     title=self.app_title,
-                                     center_title=False,
-                                     actions=[self.theme_switcher, self.exit_button])
+    # --------------- #
+    # --- Threads --- #
+    # --------------- #
+    def __start_helper_threads(self):
+        """Called after the initialization of the application."""
+        threading.Thread(target=self.__update_weather_and_currency).start()
+        threading.Thread(target=self.__update_group_chat).start()
 
     def __update_weather_and_currency(self) -> None:
         """Run this function every second on a separate thread to update the weather and currency information."""
@@ -277,9 +242,12 @@ class ClientGUI:
                 if not self.group_chat_message_queue.empty():
                     message = self.group_chat_message_queue.get()
                     logger.debug(f"New message in the group chat message queue. Message: {message}")
-                    self.update_msg_list(message)
+                    self.__update_msg_list(message)
             time.sleep(1)
 
+    # ---------------------- #
+    # --- Helper Methods --- #
+    # ---------------------- #
     def __update_weather(self, weather: dict) -> None:
         """Update the weather information on the GUI."""
         # logger.debug(f"Updating weather information: {weather}")
@@ -294,11 +262,41 @@ class ClientGUI:
         self.euro_text.value = f"{currency['eur']}€"
         self.page.update()
 
+    def __generate_client_card(self) -> ClientCard:
+        """Generates a client card."""
+        return ClientCard(str(self.client_card_name.value), int(str(self.client_card_no.value)))
+
+    def __toggle_subscribe_button_action(self, disable_inputs_bool, button_text, snackbar_message):
+        self.message_input_field.disabled = disable_inputs_bool
+        self.send_message_button.disabled = disable_inputs_bool
+        self.subscribe_to_messages_button.text = button_text
+        Utility.create_snackbar(self.page, snackbar_message)
+
+    def __update_msg_list(self, message: str) -> None:
+        self.msg_list.controls.append(ft.Text(f"{message}"))
+        self.page.update()
+
+    # ------------------- #
+    # --- GUI Drawing --- #
+    # ------------------- #
+    def __init_window(self) -> None:
+        """Initializes the window of the GUI."""
+        self.page = Utility.initialize_flet_gui_page(page=self.page,
+                                                     title=self.APP_NAME,
+                                                     window_width=self.WINDOW_WIDTH,
+                                                     window_height=self.WINDOW_HEIGHT)
+
+    def __draw_app_bar(self) -> None:
+        """Add the app bar on the page."""
+        self.page.appbar = ft.AppBar(leading=self.app_icon,
+                                     leading_width=48,
+                                     title=self.app_title,
+                                     center_title=False,
+                                     actions=[self.theme_switcher, self.exit_button])
+
     def __call__(self, flet_page: ft.Page) -> None:
         """Create the page and add controls to it on call."""
         self.page = flet_page
-        self.page.fonts = {
-            "RobotoSlab": "https://github.com/google/fonts/raw/main/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf"}
         self.__init_window()
         self.__draw_app_bar()
         info_column = Row(controls=[self.weather_container, self.currency_container], wrap=False)
@@ -307,19 +305,10 @@ class ClientGUI:
             controls=[self.subscribe_to_messages_button, self.start_button, self.close_connection_button], wrap=False,
             alignment=ft.MainAxisAlignment.SPACE_EVENLY)
         host_port_connection_row = Column(controls=[host_port_row, client_buttons_row], wrap=False)
-        chat_box_container = ft.Container(content=self.msg_list,
-                                          ink=True,
-                                          width=500,
-                                          height=400,
-                                          border_radius=ft.border_radius.all(20),
-                                          border=ft.border.all(4, ft.colors.BLACK),
-                                          padding=ft.padding.all(10),
-                                          gradient=ft.LinearGradient(begin=ft.alignment.top_center,
-                                                                     end=ft.alignment.bottom_center,
-                                                                     colors=[ft.colors.WHITE, ft.colors.BLUE_GREY_100]))
+
         message_box_row = Row(controls=[self.message_input_field, self.send_message_button], wrap=False)
         host_port_connection_chat_column = Column(
-            controls=[host_port_connection_row, chat_box_container, message_box_row], wrap=False)
+            controls=[host_port_connection_row, self.chat_box_container, message_box_row], wrap=False)
         card_name_no_row = Row(controls=[self.client_card_name, self.client_card_no], wrap=False)
         client_card_column = Column(controls=[self.client_card_image, card_name_no_row], wrap=False)
         info_with_client_card_column = Column(controls=[client_card_column, info_column, self.register_client_button],

@@ -72,3 +72,218 @@ BrokenPipeError: [Errno 32] Broken pipe
 [DEBUG] main: On Click: Start Button
 [DEBUG] main: On Click: Exit Button
 [DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Sessiz Komşu and apartment no: 635
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Komşu Köpeği and apartment no: 667
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [16:45:36] [Apt No:635] Sessiz Komşu: Selam
+[DEBUG] main: New message in the group chat message queue. Message: [16:45:36] [Apt No:635] Sessiz Komşu: Selam
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [16:45:52] [Apt No:667] Komşu Köpeği: sen kimsin lan
+[DEBUG] main: New message in the group chat message queue. Message: [16:45:52] [Apt No:667] Komşu Köpeği: sen kimsin lan
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Komşu Kedisi and apartment no: 776
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:16] [Apt No:635] Sessiz Komşu: tek ikimiz mi varız?
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:16] [Apt No:635] Sessiz Komşu: tek ikimiz mi varız?
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:16] [Apt No:635] Sessiz Komşu: tek ikimiz mi varız?
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:25] [Apt No:667] Komşu Köpeği: aa kedi de gelmiş
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:25] [Apt No:667] Komşu Köpeği: aa kedi de gelmiş
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:25] [Apt No:667] Komşu Köpeği: aa kedi de gelmiş
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Unsubscribed from the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:34] [Apt No:776] Komşu Kedisi: selam
+[DEBUG] main: New message in the group chat message queue. Message: [16:46:34] [Apt No:776] Komşu Kedisi: selam
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Demli Çay and apartment no: 976
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [20:49:38] [Apt No:976] Demli Çay: test
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [20:49:46] [Apt No:976] Demli Çay: ben mesaj atıyom
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Creating a snackbar with message: Client registered under name: Gürültücü Komşu and apartment no: 322
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: Creating a snackbar with message: Subscribed to the apartment group chat.
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [20:50:57] [Apt No:322] Gürültücü Komşu: hey
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [20:51:03] [Apt No:322] Gürültücü Komşu: been tryin, to meet you
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:45:01] [Apt No:31] Berkay: Selam server
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:46:03] [Apt No:31] Berkay: PİÇ
+[DEBUG] main: New message in the group chat message queue. Message: [21:46:03] [Apt No:31] Berkay: PİÇ
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:46:09] [Apt No:202] Gürültücü Komşu: SENAİMBVDFYIUOIPOIO
+[DEBUG] main: New message in the group chat message queue. Message: [21:46:09] [Apt No:202] Gürültücü Komşu: SENAİMBVDFYIUOIPOIO
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:48:55] [Apt No:899] Komşu Kızı: selam jızlar
+[DEBUG] main: New message in the group chat message queue. Message: [21:48:55] [Apt No:899] Komşu Kızı: selam jızlar
+[DEBUG] main: New message in the group chat message queue. Message: [21:48:55] [Apt No:899] Komşu Kızı: selam jızlar
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:40] [Apt No:899] Komşu Kızı: jhgfdsa
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:40] [Apt No:899] Komşu Kızı: jhgfdsa
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:40] [Apt No:899] Komşu Kızı: jhgfdsa
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:50] [Apt No:899] Komşu Kızı: 2435yrutjgh
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:50] [Apt No:899] Komşu Kızı: 2435yrutjgh
+[DEBUG] main: New message in the group chat message queue. Message: [21:49:50] [Apt No:899] Komşu Kızı: 2435yrutjgh
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:06] [Apt No:899] Komşu Kızı: rwdtfgj
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:06] [Apt No:899] Komşu Kızı: rwdtfgj
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:06] [Apt No:899] Komşu Kızı: rwdtfgj
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:07] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:08] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:09] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: New message in the group chat message queue. Message: [21:50:11] [Apt No:899] Komşu Kızı: 
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [21:59:08] [Apt No:202] Gürültücü Komşu: selam
+[DEBUG] main: New message in the group chat message queue. Message: [21:59:08] [Apt No:202] Gürültücü Komşu: selam
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [22:04:23] [Apt No:31] Berkay: seala
+[DEBUG] main: New message in the group chat message queue. Message: [22:04:23] [Apt No:31] Berkay: seala
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button

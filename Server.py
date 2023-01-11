@@ -9,7 +9,7 @@ import Utility
 import custom_exceptions as ce
 from ClientCard import ClientCard
 from Currency import CurrencyDataFetcher
-from Weather import WeatherDataFetcher
+from Weather import WeatherDataFetcherAPI
 
 
 class Server(threading.Thread):
@@ -24,12 +24,12 @@ class Server(threading.Thread):
         self.logger = multiprocessing.Queue()
         self.open_connection_threads: list[ClientThread] = []
         self.server_management_thread = ServerManagementThread(self)
-        self.weather_data_fetcher = WeatherDataFetcher()
+        self.weather_data_fetcher = WeatherDataFetcherAPI()
         self.currency_data_fetcher = CurrencyDataFetcher()
         self.group_chat_updater_thread = threading.Thread(target=self.__update_group_chat)
         self.group_chat_updater_thread.start()
-        self.weather = {}
-        self.currency = {}
+        self.weather = AkinProtocol.DEFAULT_WEATHER_DICT
+        self.currency = AkinProtocol.DEFAULT_CURRENCY_DICT
 
     def run(self):
         self.__bind_and_listen()
@@ -234,10 +234,15 @@ class ServerManagementThread(threading.Thread):
                 self.__console_command_listener()
             time.sleep(1)
 
+    def command_change_update_rate(self, new_rate: int) -> None:
+        self.UPDATE_RATE = new_rate
+        self.logger.put(f"Update rate changed to {new_rate} seconds")
+
     def command_stop_server(self):
         """Stops the server"""
         self.running_flag = False
         self.server.stop_server()
+        self.logger.put("Server stopped")
 
     def command_open_connections(self):
         """Returns a list of the names of the open connections"""
@@ -277,7 +282,7 @@ class ServerManagementThread(threading.Thread):
             for thread in self.server.open_connection_threads:
                 thread.update_weather(self.server.get_weather())
             time.sleep(self.UPDATE_RATE)
-            self.logger.put("Updated weather cached on the server from the internet.")
+            self.logger.put("UPDATED WEATHER | Weather data has been updated from weather.com")
 
     def __update_currency_for_clients(self):
         """Updates the currency for all client threads"""
@@ -286,7 +291,7 @@ class ServerManagementThread(threading.Thread):
             for thread in self.server.open_connection_threads:
                 thread.update_currency(self.server.get_currency())
             time.sleep(self.UPDATE_RATE)
-            self.logger.put("Updated currency cached on the server from doviz.com")
+            self.logger.put("UPDATED CURRENCY | Currency data has been updated from doviz.com")
 
 
 def main():

@@ -1,4 +1,6 @@
 from ClientCard import ClientCard
+from Currency import CurrencyDataFetcher
+from Weather import WeatherDataFetcher
 
 DELIMITER = "@@|<<!?!>>|@@"
 
@@ -17,6 +19,12 @@ REGISTER_USER = f"REG{DELIMITER}"
 
 OK = f"OK.{DELIMITER}"
 ERROR = f"ERR.{DELIMITER}"
+
+DEFAULT_WEATHER_DICT = WeatherDataFetcher.EMPTY_WEATHER_DATA
+DEFAULT_CURRENCY_DICT = CurrencyDataFetcher.EMPTY_CURRENCY_DATA
+
+DEFAULT_HOST = "0.0.0.0"
+DEFAULT_PORT = 8080
 
 
 def construct_chat_message(message):
