@@ -52,3 +52,7 @@ class ApartmentNoShouldBeIntegerError(Exception):
 
 class NameShouldBeStringError(Exception):
     pass
+
+
+class NoServersFoundOnThisHostAndPortError(Exception):
+    pass

@@ -4,6 +4,51 @@ import random
 
 import flet as ft
 
+START_BUTTON_STYLE = ft.ButtonStyle(
+    color={
+        ft.MaterialState.DEFAULT: ft.colors.WHITE,
+        ft.MaterialState.DISABLED: ft.colors.BLUE_GREY_100,
+    },
+    bgcolor={
+        ft.MaterialState.HOVERED: ft.colors.LIGHT_GREEN_600,
+        ft.MaterialState.DEFAULT: ft.colors.LIGHT_GREEN_800,
+        ft.MaterialState.DISABLED: ft.colors.BLUE_GREY_900,
+    })
+
+CLIENT_BUTTON_STYLE = ft.ButtonStyle(
+    color={
+        ft.MaterialState.DEFAULT: ft.colors.AMBER_ACCENT,
+        ft.MaterialState.DISABLED: ft.colors.BLUE_GREY_100,
+        ft.MaterialState.PRESSED: ft.colors.WHITE,
+    },
+    bgcolor={
+        ft.MaterialState.DEFAULT: ft.colors.PURPLE_600,
+        ft.MaterialState.DISABLED: ft.colors.BLUE_GREY_900,
+        ft.MaterialState.PRESSED: ft.colors.RED_400,
+    },
+    shape=ft.BeveledRectangleBorder(radius=10))
+
+
+def get_flet_exit_button() -> ft.IconButton:
+    return ft.IconButton(icon=ft.icons.CANCEL_OUTLINED,
+                         tooltip="Exit",
+                         icon_size=28,
+                         icon_color=ft.colors.RED_400)
+
+
+def get_flet_theme_switch_button() -> ft.IconButton:
+    return ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED,
+                         tooltip="Switch Dark/Light Theme",
+                         icon_size=24)
+
+
+def get_flet_app_title(app_name: str) -> ft.Text:
+    return ft.Text(value=app_name,
+                   style=ft.TextThemeStyle.DISPLAY_SMALL,
+                   font_family="RobotoSlab",
+                   width=800,
+                   text_align=ft.TextAlign.LEFT)
+
 
 def get_simple_time() -> str:
     """Returns the current time in the format [HH:MM:SS]"""
@@ -63,17 +108,26 @@ def initialize_flet_gui_page(page: ft.Page, title: str, window_height: int, wind
 
 def create_snackbar(page: ft.Page, message: str) -> None:
     """Creates a snackbar with the given message and displays it."""
-    sb = ft.SnackBar(content=ft.Text(message), action='OK', action_color=ft.colors.WHITE)
+    sb = ft.SnackBar(content=ft.Text(message), action='OK', action_color=ft.colors.GREEN,
+                     )
     sb.open = True
     page.add(sb)
     page.update()
 
 
-def get_info_container() -> ft.Container:
+def get_info_container(rows_of_items: int) -> ft.Container:
     return ft.Container(width=200,
-                        height=150,
+                        height=100 + (rows_of_items * 50),
                         padding=ft.padding.all(10),
                         margin=ft.margin.all(10),
                         border=ft.border.all(1),
                         border_radius=10,
                         alignment=ft.alignment.top_right)
+
+
+def get_container_text(text_value: str) -> ft.Text:
+    return ft.Text(value=text_value,
+                   style=ft.TextThemeStyle.LABEL_LARGE,
+                   font_family="RobotoSlab",
+                   width=200,
+                   text_align=ft.TextAlign.LEFT)

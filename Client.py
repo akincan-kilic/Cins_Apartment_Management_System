@@ -19,19 +19,22 @@ class Client:
         self.currency_data = AkinProtocol.DEFAULT_CURRENCY_DICT
 
     def start(self):
-        self.socket.connect((self.host, self.port))
-        print("Connected to server")
-        welcome_message = self.socket.recv(1024).decode()  # Receive the welcome message from the server
-        print(welcome_message)
-        self.client_manager_thread.start()
+        try:
+            self.socket.connect((self.host, self.port))
+            welcome_message = self.socket.recv(1024).decode()  # Receive the welcome message from the server
+            self.message_queue.put(welcome_message)
+            self.client_manager_thread.start()
+        except Exception:
+            return
 
+        # Connected to the server.
         while True:
             self.send_weather_request()
-            time.sleep(5)
+            time.sleep(1)
             self.send_currency_request()
-            time.sleep(5)
+            time.sleep(10)
 
-    def get_message_queue(self):
+    def get_message_queue(self) -> multiprocessing.Queue:
         return self.message_queue
 
     def subscribe_to_message_channel(self):

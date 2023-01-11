@@ -17,97 +17,80 @@ logger = Utility.get_logger()
 class ClientGUI:
     DEFAULT_CLIENT_NAME = Utility.get_random_card_name()
     DEFAULT_CLIENT_NO = Utility.get_random_card_apartment_no()
-    WINDOW_HEIGHT = 780
+    WINDOW_HEIGHT = 820
     WINDOW_WIDTH = 1200
-    APP_NAME = "Cins Apartment Resident Client"
+    APP_NAME = "Cins Apartment Client"
+    SUBSCRIBE_BUTTON_TEXT = "Join to the Apartment Group Chat"
+    UNSUBSCRIBE_BUTTON_TEXT = "Leave the Apartment Group Chat"
 
     def __init__(self):
         self.white_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
                                                 end=ft.alignment.bottom_center,
-                                                colors=[ft.colors.WHITE, ft.colors.BLUE_GREY_100])
+                                                colors=[ft.colors.PINK_200, ft.colors.BLUE_GREY_100])
         self.dark_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
                                                end=ft.alignment.bottom_center,
-                                               colors=[ft.colors.BLACK, ft.colors.BLUE_GREY_100])
+                                               colors=[ft.colors.BLACK, ft.colors.PINK_200])
         ### Server Logic ###
         self.host = AkinProtocol.DEFAULT_HOST
         self.port = AkinProtocol.DEFAULT_PORT
         self.group_chat_message_queue: multiprocessing.Queue = None  # type: ignore
         self.running_flag = True
+        self.client_registered = False
 
         ### Main Application ###
-        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab",
-                                 width=800, text_align=ft.TextAlign.LEFT)
-        self.app_icon = ft.Icon(name=ft.icons.ACCESS_ALARM, size=50)
-        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme",
-                                            icon_size=24, on_click=self.__on_click_switch_theme)
-        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28,
-                                         on_click=self.__on_click_exit_button)
+        self.app_title = Utility.get_flet_app_title(self.APP_NAME)
+        self.app_icon = ft.Image('client.png', width=96, height=96)
+
+        self.theme_switcher = Utility.get_flet_theme_switch_button()
+        self.theme_switcher.on_click = self.__on_click_switch_theme
+
+        self.exit_button = Utility.get_flet_exit_button()
+        self.exit_button.on_click = self.__on_click_exit_button
 
         self.host_textbox = ft.TextField(label="Host", value=str(self.host), width=200)
-        self.port_textbox = ft.TextField(label="Port", value=str(self.port), width=200)
-        self.start_button = ft.ElevatedButton(text="Connect to Server", on_click=self.__on_click_start_button)
-        self.close_connection_button = ft.ElevatedButton(text="Disconnect from Server",
-                                                         on_click=self.__on_click_close_connection_button,
-                                                         disabled=True)
+        self.port_textbox = ft.TextField(label="Port", value=str(self.port), width=120)
+        self.start_button = ft.ElevatedButton(text="Connect to Server",
+                                              on_click=self.__on_click_start_button,
+                                              style=Utility.START_BUTTON_STYLE)
 
         self.client_card_image = ft.Image(src='CinsApartmentCard_Transparent.png')
-        self.client_card_name = ft.TextField(label="Client Name", value=self.DEFAULT_CLIENT_NAME, width=200)
-        self.client_card_no = ft.TextField(label="Client Apartment No", value=str(self.DEFAULT_CLIENT_NO), width=200)
+        self.client_card_name = ft.TextField(label="Name",
+                                             value=self.DEFAULT_CLIENT_NAME,
+                                             width=280)
+
+        self.client_card_no = ft.TextField(label="Apartment No",
+                                           value=str(self.DEFAULT_CLIENT_NO),
+                                           width=120)
         self.register_client_button = ft.ElevatedButton(text="Register Client by Scanning Their Card on the Reader",
-                                                        on_click=self.__on_click_register_client_button)
+                                                        on_click=self.__on_click_register_client_button,
+                                                        style=Utility.CLIENT_BUTTON_STYLE)
         self.client_card = self.__generate_client_card()
 
-        self.msg_list = ft.ListView(expand=1, spacing=10, padding=20)
+        self.msg_list = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
         self.message_input_field = ft.TextField(label="Enter a message to send...", value="", disabled=True, width=500)
         self.send_message_button = ft.IconButton(icon=ft.icons.SEND, on_click=self.__on_click_message_send_button)
-        self.subscribe_to_messages_button = ft.ElevatedButton(text="Subscribe to Messages",
-                                                              on_click=self.__on_click_subscribe_to_messages_button)
+        self.subscribe_to_messages_button = ft.ElevatedButton(text=self.SUBSCRIBE_BUTTON_TEXT,
+                                                              on_click=self.__on_click_subscribe_to_messages_button,
+                                                              style=Utility.CLIENT_BUTTON_STYLE)
 
         self.controller = ClientController(host=self.host,
                                            port=self.port)
 
         ### Weather Display ###
-        self.weather_text = ft.Text(value="Weather from Server", style=ft.TextThemeStyle.LABEL_MEDIUM,
-                                    font_family="RobotoSlab", width=800, text_align=ft.TextAlign.CENTER)
-        self.weather_container = Utility.get_info_container()
-        self.weather_image = ft.Image(src='weather.png', width=50, height=50)
-        self.wind_image = ft.Image(src='wind.png', width=50, height=50)
-        self.weather_in_celcius_text = ft.Text(value="0.0 °C",
-                                               style=ft.TextThemeStyle.LABEL_LARGE,
-                                               font_family="RobotoSlab",
-                                               width=200,
-                                               text_align=ft.TextAlign.LEFT)
-        self.wind_details_text = ft.Text(value="0 m/s, 0°",
-                                         style=ft.TextThemeStyle.LABEL_LARGE,
-                                         font_family="RobotoSlab",
-                                         width=200,
-                                         text_align=ft.TextAlign.LEFT)
-        self.weather_row = Row([self.weather_image, self.weather_in_celcius_text])
-        self.wind_row = Row([self.wind_image, self.wind_details_text])
-        self.weather_column = Column(controls=[self.weather_text, self.weather_row, self.wind_row], wrap=False)
-        self.weather_container.content = self.weather_column
+        self.weather_description_text = Utility.get_container_text("Weather Description")
+        self.temperature_celcius_text = Utility.get_container_text("0°C")
+        self.day_temperature_celcius_text = Utility.get_container_text("0°C")
+        self.night_temperature_celcius_text = Utility.get_container_text("0°C")
 
         ### Currency Display ###
-        self.currency_text = ft.Text(value="Currency from Server", style=ft.TextThemeStyle.LABEL_MEDIUM,
-                                     font_family="RobotoSlab", width=800, text_align=ft.TextAlign.CENTER)
-        self.currency_container = Utility.get_info_container()
-        self.euro_image = ft.Image(src='euro.png', width=50, height=50)
-        self.dollar_image = ft.Image(src='dollar.png', width=50, height=50)
-        self.euro_text = ft.Text(value="0 €",
-                                 style=ft.TextThemeStyle.LABEL_LARGE,
-                                 font_family="RobotoSlab",
-                                 width=200,
-                                 text_align=ft.TextAlign.LEFT)
-        self.dollar_text = ft.Text(value="0 $",
-                                   style=ft.TextThemeStyle.LABEL_LARGE,
-                                   font_family="RobotoSlab",
-                                   width=200,
-                                   text_align=ft.TextAlign.LEFT)
-        self.euro_row = Row([self.euro_image, self.euro_text])
-        self.dollar_row = Row([self.dollar_image, self.dollar_text])
-        self.currency_column = Column(controls=[self.currency_text, self.euro_row, self.dollar_row], wrap=False)
-        self.currency_container.content = self.currency_column
 
+        self.euro_text = Utility.get_container_text("0₺")
+        self.dollar_text = Utility.get_container_text("0₺")
+        self.sterling_text = Utility.get_container_text("0₺")
+        self.bitcoin_text = Utility.get_container_text("0₺")
+        self.gold_text = Utility.get_container_text("0₺")
+
+        ### MSG BOX ###
         self.chat_box_container = ft.Container(content=self.msg_list,
                                                ink=True,
                                                width=500,
@@ -128,9 +111,9 @@ class ClientGUI:
             self.client_card = self.__generate_client_card()
             self.controller.register_client(self.client_card)
             self.register_client_button.disabled = True
+            self.client_registered = True
             self.register_client_button.text = "Client has been successfully registered by the Server!"
-            Utility.create_snackbar(self.page,
-                                    f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
+            Utility.create_snackbar(self.page, f"Client registered under name: {self.client_card.name} and apartment no: {self.client_card.apartment_no}")
         except Exception as e:
             Utility.create_snackbar(self.page, f"Could not register the client. Reason: {e}")
             logger.exception(e.with_traceback(e.__traceback__))
@@ -141,8 +124,10 @@ class ClientGUI:
         if not self.controller.client_running:
             Utility.create_snackbar(self.page, "The client is not running.")
             return
+        if not self.client_registered:
+            Utility.create_snackbar(self.page, "Please first register yourself by scanning your card to the card reader.")
         self.group_chat_message_queue = self.controller.get_message_queue()
-        if self.subscribe_to_messages_button.text == "Unsubscribe from Messages":
+        if self.subscribe_to_messages_button.text == self.UNSUBSCRIBE_BUTTON_TEXT:
             try:
                 self.controller.unsubscribe_from_message_channel()
             except ce.ClientNotRunningError:
@@ -150,10 +135,10 @@ class ClientGUI:
                 return
             self.__toggle_subscribe_button_action(
                 True,
-                "Subscribe to Messages",
-                "Unsubscribed from the apartment group chat.",
+                self.SUBSCRIBE_BUTTON_TEXT,
+                "You just left the apartment group chat...",
             )
-        elif self.subscribe_to_messages_button.text == "Subscribe to Messages":
+        elif self.subscribe_to_messages_button.text == self.SUBSCRIBE_BUTTON_TEXT:
             try:
                 self.controller.subscribe_to_message_channel()
             except ce.ClientNotRunningError:
@@ -161,18 +146,9 @@ class ClientGUI:
                 return
             self.__toggle_subscribe_button_action(
                 False,
-                "Unsubscribe from Messages",
-                "Subscribed to the apartment group chat.",
+                self.UNSUBSCRIBE_BUTTON_TEXT,
+                "You just joined to the apartment group chat!",
             )
-        self.page.update()
-
-    def __on_click_close_connection_button(self, _) -> None:
-        """Closes the connection to the server."""
-        logger.debug("On Click: Close Connection Button")
-        self.start_button.disabled = False
-        self.start_button.text = "Connect to Server"
-        self.controller.stop_client()
-        self.running_flag = False
         self.page.update()
 
     def __on_click_message_send_button(self, _) -> None:
@@ -185,17 +161,31 @@ class ClientGUI:
 
     def __on_click_start_button(self, _) -> None:
         """Starts the server."""
+        logger.debug("On Click: Start Button")
         try:
-            logger.debug("On Click: Start Button")
+            if not self.port_textbox.value.isdigit():
+                raise ValueError("Port must be an integer.")
+
             self.host = str(self.host_textbox.value)
             self.port = int(str(self.port_textbox.value))
-            self.controller.start_client(self.host, self.port)
-            self.start_button.text = "Connected to Server!"
+
+            self.start_button.text = "Trying to connect..."
             self.start_button.disabled = True
-            self.close_connection_button.disabled = False
             self.page.update()
-        except Exception as e:
+
+            self.controller.start_client(self.host, self.port)
+            self.start_button.text = "Connected!"
+            self.start_button.disabled = True
+            self.host_textbox.disabled = True
+            self.port_textbox.disabled = True
+            self.page.update()
+        except ce.NoServersFoundOnThisHostAndPortError as e:
+            self.start_button.text = "Connect to Server"
+            self.start_button.disabled = False
+            self.page.update()
             Utility.create_snackbar(self.page, f"An error occurred: {e}")
+        finally:
+            self.page.update()
 
     def __on_click_exit_button(self, _) -> None:
         """Closes the application window."""
@@ -251,15 +241,32 @@ class ClientGUI:
     def __update_weather(self, weather: dict) -> None:
         """Update the weather information on the GUI."""
         # logger.debug(f"Updating weather information: {weather}")
-        self.weather_in_celcius_text.value = f"{weather['temperature']:.1f} °C"
-        self.wind_details_text.value = f"{weather['wind_speed']}m/s {weather['wind_direction']}°"
+        weather_description = weather["weather_description"]
+        temp_celcius = weather["temperature_celcius"]
+        day_temp_celcius = weather["day_temp_celcius"]
+        night_temp_celcius = weather["night_temp_celcius"]
+
+        self.weather_description_text.value = weather_description
+        self.temperature_celcius_text.value = f"{temp_celcius}°C"
+        self.day_temperature_celcius_text.value = f"{day_temp_celcius}°C"
+        self.night_temperature_celcius_text.value = f"{night_temp_celcius}°C"
         self.page.update()
 
     def __update_currency(self, currency: dict) -> None:
         """Update the currency information on the GUI."""
-        # logger.debug(f"Updating currency information: {currency}")
-        self.dollar_text.value = f"{currency['usd']}$"
-        self.euro_text.value = f"{currency['eur']}€"
+        # Get upto 4 decimal places
+
+        usd = currency["USD"]
+        eur = currency["EUR"]
+        sterling = currency["GBP"]
+        bitcoin = currency["BTC"]
+        gold = currency["GOLD_GR"]
+
+        self.dollar_text.value = f"{usd}₺"
+        self.euro_text.value = f"{eur}₺"
+        self.sterling_text.value = f"{sterling}₺"
+        self.bitcoin_text.value = f"{bitcoin}₺"
+        self.gold_text.value = f"{gold}₺ (1GR)"
         self.page.update()
 
     def __generate_client_card(self) -> ClientCard:
@@ -294,25 +301,102 @@ class ClientGUI:
                                      center_title=False,
                                      actions=[self.theme_switcher, self.exit_button])
 
+    def __get_weather_container(self):
+        weather_container = Utility.get_info_container(rows_of_items=3)
+
+        weather_component_title_text = ft.Text(value="Weather from Server",
+                                               style=ft.TextThemeStyle.LABEL_MEDIUM,
+                                               font_family="RobotoSlab",
+                                               width=800,
+                                               text_align=ft.TextAlign.CENTER)
+
+        temp_celcius_image = ft.Image(src='weather.png', width=50, height=50)
+        day_temp_image = ft.Image(src='sunrise_v1.png', width=50, height=50)
+        night_temp_image = ft.Image(src='night.png', width=50, height=50)
+
+        temperature_row = Row([temp_celcius_image, self.temperature_celcius_text])
+        day_temperature_row = Row([day_temp_image, self.day_temperature_celcius_text])
+        night_temperature_row = Row([night_temp_image, self.night_temperature_celcius_text])
+
+        weather_column = Column(controls=[weather_component_title_text,
+                                          temperature_row,
+                                          day_temperature_row,
+                                          night_temperature_row,
+                                          self.weather_description_text],
+                                wrap=False)
+        weather_container.content = weather_column
+        return weather_container
+
+    def __get_currency_container(self):
+        currency_container = Utility.get_info_container(rows_of_items=5)
+
+        dollar_image = ft.Image(src='dollar.png', width=50, height=50)
+        euro_image = ft.Image(src='euro.png', width=50, height=50)
+        sterling_image = ft.Image(src='sterling.png', width=50, height=50)
+        bitcoin_image = ft.Image(src='bitcoin.png', width=50, height=50)
+        gold_image = ft.Image(src='gold.png', width=50, height=50)
+
+        ### Currency Display ###
+        currency_component_title_text = ft.Text(value="Currency from Server",
+                                                style=ft.TextThemeStyle.LABEL_MEDIUM,
+                                                font_family="RobotoSlab",
+                                                width=800,
+                                                text_align=ft.TextAlign.CENTER)
+
+        dollar_row = Row([dollar_image, self.dollar_text])
+        euro_row = Row([euro_image, self.euro_text])
+        sterling_row = Row([sterling_image, self.sterling_text])
+        gold_row = Row([gold_image, self.gold_text])
+        bitcoin_row = Row([bitcoin_image, self.bitcoin_text])
+
+        currency_column = Column(controls=[currency_component_title_text,
+                                           dollar_row,
+                                           euro_row,
+                                           sterling_row,
+                                           bitcoin_row,
+                                           gold_row], wrap=False)
+
+        currency_container.content = currency_column
+        return currency_container
+
+    def __draw_host_port_connect_section(self) -> None:
+        pass
+
     def __call__(self, flet_page: ft.Page) -> None:
         """Create the page and add controls to it on call."""
         self.page = flet_page
         self.__init_window()
         self.__draw_app_bar()
-        info_column = Row(controls=[self.weather_container, self.currency_container], wrap=False)
-        host_port_row = Row(controls=[self.host_textbox, self.port_textbox], wrap=False)
-        client_buttons_row = Row(
-            controls=[self.subscribe_to_messages_button, self.start_button, self.close_connection_button], wrap=False,
-            alignment=ft.MainAxisAlignment.SPACE_EVENLY)
-        host_port_connection_row = Column(controls=[host_port_row, client_buttons_row], wrap=False)
+        host_port_row = Row(controls=[self.host_textbox,
+                                      self.port_textbox,
+                                      self.start_button],
+                            wrap=False)
+        weather_and_currency = Row(controls=[self.__get_weather_container(),
+                                             self.__get_currency_container()],
+                                   wrap=False)
+        message_box_row = Row(controls=[self.message_input_field,
+                                        self.send_message_button],
+                              wrap=False)
 
-        message_box_row = Row(controls=[self.message_input_field, self.send_message_button], wrap=False)
         host_port_connection_chat_column = Column(
-            controls=[host_port_connection_row, self.chat_box_container, message_box_row], wrap=False)
-        card_name_no_row = Row(controls=[self.client_card_name, self.client_card_no], wrap=False)
-        client_card_column = Column(controls=[self.client_card_image, card_name_no_row], wrap=False)
-        info_with_client_card_column = Column(controls=[client_card_column, info_column, self.register_client_button],
-                                              wrap=False)
+            controls=[host_port_row,
+                      self.chat_box_container,
+                      message_box_row,
+                      self.subscribe_to_messages_button],
+            wrap=False,
+            alignment=ft.MainAxisAlignment.START)
+
+        card_name_no_row = Row(controls=[self.client_card_name,
+                                         self.client_card_no],
+                               wrap=False)
+        client_card_column = Column(controls=[self.client_card_image,
+                                              card_name_no_row],
+                                    wrap=False)
+        info_with_client_card_column = Column(
+            controls=[client_card_column,
+                      self.register_client_button,
+                      weather_and_currency],
+            wrap=False)
 
         left_of_page_container = ft.Container(width=self.page.window_width / 2 - 30,  # type: ignore
                                               height=self.page.window_height,

@@ -1,6 +1,7 @@
 import multiprocessing
 import threading
 
+import AkinProtocol
 import custom_exceptions as ce
 from Client import Client
 from ClientCard import ClientCard
@@ -17,7 +18,7 @@ class ClientController:
         self.client_running = False
         self.message_queue = None
 
-    def start_client(self, host, port) -> bool:
+    def start_client(self, host, port):
         """Starts the client. Returns True if the client is started successfully, otherwise raises an exception.
         Exceptions:
             ClientAlreadyRunningError: If the client is already running.
@@ -27,14 +28,19 @@ class ClientController:
         self.port = port
         if self.client_running:
             raise ce.ClientAlreadyRunningError("Client is already running.")
+
+        self.client = Client(self.host, self.port)
+        self.message_queue = self.client.get_message_queue()
+        client_thread = threading.Thread(target=self.client.start)
+        client_thread.start()
         try:
-            self.client = Client(self.host, self.port)
-            self.message_queue = self.client.get_message_queue()
-            threading.Thread(target=self.client.start).start()
-            self.client_running = True
-            return True
-        except ce.InvalidPortError as e:
-            raise e
+            msg = self.message_queue.get(block=True, timeout=5)
+        except Exception as e:
+            msg = ""
+        if msg != AkinProtocol.WELCOME_TO_THE_SERVER:
+            raise ce.NoServersFoundOnThisHostAndPortError("No servers were found on this host and port!")
+        self.client_running = True
+        return True
 
     def register_client(self, card: ClientCard) -> bool:
         """Registers the client. Returns True if the client is registered successfully, otherwise raises an exception.

@@ -66,6 +66,11 @@ class WeatherDataFetcher:
                 'day_temp_celcius': day_temp_celcius,
                 'night_temp_celcius': night_temp_celcius}
 
+    def fetch_weather_data(self, city):
+        if city == "Manisa":
+            return self.parse_weather()
+        return self.EMPTY_WEATHER_DATA
+
     def __convert_temperature_to_int(self, temperature):
         temperature = temperature.replace(self.degree_character, "")
         temperature = int(temperature)

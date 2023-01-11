@@ -287,3 +287,1042 @@ BrokenPipeError: [Errno 32] Broken pipe
 [DEBUG] main: Switching theme...
 [DEBUG] main: Switching theme...
 [DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'temperature': 11.7, 'wind_speed': 4.0, 'wind_direction': 63.0}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': '', 'temperature_celcius': 0, 'day_temp_celcius': 0, 'night_temp_celcius': 0}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Close Connection Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 11.1, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Switching theme...
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Switching theme...
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: Updating weather information: {'weather_description': 'Light Rain Shower', 'temperature_celcius': 10.0, 'day_temp_celcius': 10.6, 'night_temp_celcius': 4.4}
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Stop Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:06:56] [Apt No:844] Bora Canbula: Selam, ben bora
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:31] [Apt No:906] Komşu Kızı: Kimse var mı?
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:31] [Apt No:906] Komşu Kızı: Kimse var mı?
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:39] [Apt No:844] Bora Canbula: Ben varım :)
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:39] [Apt No:844] Bora Canbula: Ben varım :)
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:49] [Apt No:906] Komşu Kızı: hangi kattasın :))))))))
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:49] [Apt No:906] Komşu Kızı: hangi kattasın :))))))))
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:55] [Apt No:844] Bora Canbula: Sen nerde istersen :))
+[DEBUG] main: New message in the group chat message queue. Message: [18:07:55] [Apt No:844] Bora Canbula: Sen nerde istersen :))
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:08:04] [Apt No:844] Bora Canbula: eee
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:31:05] [Apt No:195] Komşu Köpeği: test
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:40:06] [Apt No:545] Xinsikici: elam
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:10] [Apt No:545] Xinsikici: kjrhlwjkşei,
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:15] [Apt No:545] Xinsikici: elasemwke
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:23] [Apt No:545] Xinsikici: aynn
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:24] [Apt No:545] Xinsikici: asdas
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:25] [Apt No:545] Xinsikici: sdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:26] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:27] [Apt No:545] Xinsikici: sdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:28] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:30] [Apt No:545] Xinsikici: asdasdasdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:33] [Apt No:545] Xinsikici: asdasdasdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:34] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:35] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:37] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:38] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [18:43:40] [Apt No:545] Xinsikici: asdasd
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 106, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:18:20] [Apt No:131] Nane Limon: sa
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:19:42] [Apt No:387] Demli Çay: slm
+[DEBUG] main: New message in the group chat message queue. Message: [19:19:42] [Apt No:387] Demli Çay: slm
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:19:55] [Apt No:131] Nane Limon: amını yirim
+[DEBUG] main: New message in the group chat message queue. Message: [19:19:55] [Apt No:131] Nane Limon: amını yirim
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:22:10] [Apt No:131] Nane Limon: awwawwawaaw yaw akın sana demedimm i şu sampplera adn gibi topla amk sasdaasadaasddas
+[DEBUG] main: New message in the group chat message queue. Message: [19:22:10] [Apt No:131] Nane Limon: awwawwawaaw yaw akın sana demedimm i şu sampplera adn gibi topla amk sasdaasadaasddas
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:22:16] [Apt No:131] Nane Limon: dadaadasfasdsadsasdasdasfdasa
+[DEBUG] main: New message in the group chat message queue. Message: [19:22:16] [Apt No:131] Nane Limon: dadaadasfasdsadsasdasdasfdasa
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:24:55] [Apt No:131] Nane Limon: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget mauris molestie, tincidunt felis at, accumsan arcu. Fusce mauris nisi, imperdiet eu bibendum non, accumsan in augue. Duis nec fermentum sem. Suspendisse potenti. Nullam tincidunt facilisis arcu quis vulputate. Morbi interdum eros vitae ultrices hendrerit. Nam accumsan pretium tellus, sit amet vehicula enim suscipit ut. Nam tempus vulputate libero sit amet mollis. Donec elementum volutpat urna, ut dictum metus congue vel. Maecenas tincidunt metus eu nulla interdum, at vulputate elit molestie. Ut ut sem erat. Maecenas felis risus, consectetur in orci at, pellentesque porta lectus. Vivamus a ipsum purus. Aliquam id eros vel lorem interdum fringilla.Cras sollicitudin viverra bibendum. Quisque risus nisi, tempor eget sollicitudin vitae, laoreet at tellus. Nulla nec fringilla ligula. Nunc iaculis justo tristique lorem interdum gravida. Fusce lacinia, sapien ac mollis aliquet, metus diam ultr
+[DEBUG] main: New message in the group chat message queue. Message: [19:24:55] [Apt No:131] Nane Limon: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget mauris molestie, tincidunt felis at, accumsan arcu. Fusce mauris nisi, imperdiet eu bibendum non, accumsan in augue. Duis nec fermentum sem. Suspendisse potenti. Nullam tincidunt facilisis arcu quis vulputate. Morbi interdum eros vitae ultrices hendrerit. Nam accumsan pretium tellus, sit amet vehicula enim suscipit ut. Nam tempus vulputate libero sit amet mollis. Donec elementum volutpat urna, ut dictum metus congue vel. Maecenas tincidunt metus eu nulla interdum, at vulputate elit molestie. Ut ut sem erat. Maecenas felis risus, consectetur in orci at, pellentesque porta lectus. Vivamus a ipsum purus. Aliquam id eros vel lorem interdum fringilla.Cras sollicitudin viverra bibendum. Quisque risus nisi, tempor eget sollicitudin vitae, laoreet at tellus. Nulla nec fringilla ligula. Nunc iaculis justo tristique lorem interdum gravida. Fusce lacinia, sapien ac mollis aliquet, metus diam ultr
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:25:36] [Apt No:131] Nane Limon: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget mauris molestie, tincidunt felis at, accumsan arcu. Fusce mauris nisi, imperdiet eu bibendum non, accumsan in augue. Duis nec fermentum sem. Suspendisse potenti. Nullam tincidunt facilisis arcu quis vulputate. Morbi interdum eros vitae ultrices hendrerit. Nam accumsan pretium tellus, sit amet vehicula enim suscipit ut. Nam tempus vulputate libero sit amet mollis. Donec elementum volutpat urna, ut dictum metus congue vel. Maecenas tincidunt metus eu nulla interdum, at vulputate elit molestie. Ut ut sem erat. Maecenas felis risus, consectetur in orci at, pellentesque porta lectus. Vivamus a ipsum purus. Aliquam id eros vel lorem interdum fringilla.Cras sollicitudin viverra bibendum. Quisque risus nisi, tempor eget sollicitudin vitae, laoreet at tellus. Nulla nec fringilla ligula. Nunc iaculis justo tristique lorem interdum gravida. Fusce lacinia, sapien ac mollis aliquet, metus diam ultr
+[DEBUG] main: New message in the group chat message queue. Message: [19:25:36] [Apt No:131] Nane Limon: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget mauris molestie, tincidunt felis at, accumsan arcu. Fusce mauris nisi, imperdiet eu bibendum non, accumsan in augue. Duis nec fermentum sem. Suspendisse potenti. Nullam tincidunt facilisis arcu quis vulputate. Morbi interdum eros vitae ultrices hendrerit. Nam accumsan pretium tellus, sit amet vehicula enim suscipit ut. Nam tempus vulputate libero sit amet mollis. Donec elementum volutpat urna, ut dictum metus congue vel. Maecenas tincidunt metus eu nulla interdum, at vulputate elit molestie. Ut ut sem erat. Maecenas felis risus, consectetur in orci at, pellentesque porta lectus. Vivamus a ipsum purus. Aliquam id eros vel lorem interdum fringilla.Cras sollicitudin viverra bibendum. Quisque risus nisi, tempor eget sollicitudin vitae, laoreet at tellus. Nulla nec fringilla ligula. Nunc iaculis justo tristique lorem interdum gravida. Fusce lacinia, sapien ac mollis aliquet, metus diam ultr
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 111, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 111, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 111, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 111, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[ERROR] main: Client is not running.
+Traceback (most recent call last):
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientGUI.py", line 111, in __on_click_register_client_button
+    self.controller.register_client(self.client_card)
+  File "/Users/akin/Code/GitHub/Cins_Apartment_Management_System/ClientController.py", line 52, in register_client
+    raise ce.ClientNotRunningError("Client is not running.")
+custom_exceptions.ClientNotRunningError: Client is not running.
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Start Button
+[DEBUG] main: On Click: Subscribe Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: On Click: Register Client Button
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:56:30] [Apt No:782] Komşu Köpeği: asdasd
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:56:37] [Apt No:782] Komşu Köpeği: asdasd
+[DEBUG] main: On Click: Message Send Button
+[DEBUG] main: New message in the group chat message queue. Message: [19:56:39] [Apt No:782] Komşu Köpeği: asdasd
+[DEBUG] main: Switching theme...
+[DEBUG] main: On Click: Exit Button
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...
+[DEBUG] main: Switching theme...

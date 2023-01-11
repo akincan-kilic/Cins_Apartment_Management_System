@@ -18,49 +18,74 @@ logger = Utility.get_logger()
 class ServerGUI:
     server: Server
     WINDOW_HEIGHT = 780
-    WINDOW_WIDTH = 800
-    APP_NAME = "Cins Apartment Server Admin Panel"
+    WINDOW_WIDTH = 560
+    APP_NAME = "Cins Apartment Server"
 
     def __init__(self):
         self.host = AkinProtocol.DEFAULT_HOST
         self.port = AkinProtocol.DEFAULT_PORT
         self.controller = ServerController(host=self.host, port=self.port)
+        self.running_flag = True
 
-        ### Main Application ###
-        self.app_title = ft.Text(value=self.APP_NAME, style=ft.TextThemeStyle.DISPLAY_SMALL, font_family="RobotoSlab",
-                                 width=800, text_align=ft.TextAlign.LEFT)
-        self.app_icon = ft.Icon(name=ft.icons.ACCESS_ALARM, size=50)
-        self.theme_switcher = ft.IconButton(icon=ft.icons.NIGHTLIGHT_OUTLINED, tooltip="Switch Dark/Light Theme",
-                                            icon_size=24, on_click=self.__on_click_switch_theme)
-        self.exit_button = ft.IconButton(icon=ft.icons.CANCEL_OUTLINED, tooltip="Exit", icon_size=28,
-                                         on_click=self.__on_click_exit_button)
+        ### App Bar ###
+        self.app_icon = ft.Image(src="server.png", width=96, height=96)
 
-        self.fetch_frequency_textbox = ft.TextField(label="Weather and Currency Fetch Frequency (in seconds)",
-                                                    value="60", width=200)
+        self.app_title = Utility.get_flet_app_title(self.APP_NAME)
+
+        self.theme_switcher = Utility.get_flet_theme_switch_button()
+        self.theme_switcher.on_click = self.__on_click_switch_theme
+
+        self.exit_button = Utility.get_flet_exit_button()
+        self.exit_button.on_click = self.__on_click_exit_button
 
         ### Server Controls ###
-        self.start_button = ft.ElevatedButton(text="Start Server", on_click=self.__on_click_start_button)
-        self.stop_button = ft.ElevatedButton(text="Stop Server", on_click=self.__on_click_stop_button)
-        self.msg_list = ft.ListView(expand=1, spacing=10, padding=20)
+
+        self.start_button = ft.ElevatedButton(text="Start Server",
+                                              on_click=self.__on_click_start_button,
+                                              style=Utility.START_BUTTON_STYLE)
+
+        self.update_rate_textbox = ft.TextField(label="Weather and Currency Fetch Frequency (in seconds)",
+                                                value=AkinProtocol.DEFAULT_UPDATE_RATE,
+                                                width=200,
+                                                on_blur=self.__on_change_update_rate,
+                                                keyboard_type=ft.KeyboardType.NUMBER)
+
+        self.msg_list = ft.ListView(expand=1, spacing=10, padding=20, auto_scroll=True)
 
         self.host_textbox = ft.TextField(label="Host", value=str(self.host), width=200)
         self.port_textbox = ft.TextField(label="Port", value=str(self.port), width=200)
 
         self.clients_grid_view = ft.GridView(expand=True, max_extent=150, child_aspect_ratio=1)
 
-        self.open_connections_length_text = ft.Text(value="Open Connections: 0", style=ft.TextThemeStyle.BODY_LARGE,
-                                                    font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
-        self.open_connections_list_text = ft.Text(value="", style=ft.TextThemeStyle.BODY_LARGE,
-                                                  font_family="RobotoSlab", width=800, text_align=ft.TextAlign.LEFT)
+        self.open_connections_length_text = ft.Text(value="Open Connections: 0",
+                                                    style=ft.TextThemeStyle.BODY_LARGE,
+                                                    font_family="RobotoSlab",
+                                                    width=200,
+                                                    text_align=ft.TextAlign.LEFT,
+                                                    color=ft.colors.AMBER_ACCENT_700)
 
-        self.server_status_text = ft.Text(value="Server Status:", style=ft.TextThemeStyle.BODY_LARGE,
-                                          font_family="RobotoSlab", width=200, text_align=ft.TextAlign.LEFT)
-        self.server_status_online_text = ft.Text(value="Offline", style=ft.TextThemeStyle.BODY_LARGE,
-                                                 font_family="RobotoSlab", width=100, text_align=ft.TextAlign.LEFT,
+        self.open_connections_list_text = ft.Text(value="",
+                                                  style=ft.TextThemeStyle.BODY_LARGE,
+                                                  font_family="RobotoSlab",
+                                                  width=800,
+                                                  text_align=ft.TextAlign.LEFT)
+
+        self.server_status_text = ft.Text(value="Server Status:",
+                                          style=ft.TextThemeStyle.BODY_LARGE,
+                                          font_family="RobotoSlab",
+                                          text_align=ft.TextAlign.LEFT,
+                                          expand=False)
+
+        self.server_status_online_text = ft.Text(value="Offline",
+                                                 style=ft.TextThemeStyle.BODY_LARGE,
+                                                 font_family="RobotoSlab",
+                                                 expand=False,
+                                                 text_align=ft.TextAlign.LEFT,
                                                  color=ft.colors.RED)
-        self.open_connections_listener = threading.Thread(target=self.list_open_connections, daemon=True).start()
-        self.server_log_listener = threading.Thread(target=self.listen_for_messages_from_server_and_update_message_box,
-                                                    daemon=True).start()
+
+    def __start_helper_threads(self):
+        threading.Thread(target=self.__list_open_connections, daemon=True).start()
+        threading.Thread(target=self.__listen_for_messages_from_server_and_update_message_box, daemon=True).start()
 
     # ------------------------ #
     # --- On Click Methods --- #
@@ -77,24 +102,25 @@ class ServerGUI:
         self.stop_server()
         sys.exit(0)
 
-    def __on_click_stop_button(self, _) -> None:
-        """Stops the server."""
-        logger.debug("On Click: Stop Button")
-        self.stop_server()
-
     def __on_click_switch_theme(self, _) -> None:
         """Switches the theme of the GUI between light and dark."""
         logger.debug("Switching theme...")
         self.page.theme_mode = ft.ThemeMode.LIGHT if self.page.theme_mode == ft.ThemeMode.DARK else ft.ThemeMode.DARK
         self.page.update()
 
+    def __on_change_update_rate(self, _) -> None:
+        try:
+            self.controller.change_update_rate(self.update_rate_textbox.value)
+        except Exception as e:
+            Utility.create_snackbar(self.page, str(e))
+
     # --------------- #
     # --- Threads --- #
     # --------------- #
 
-    def list_open_connections(self):
+    def __list_open_connections(self):
         """Listens for open connections and updates the GUI."""
-        while True:
+        while self.running_flag:
             if self.controller.server_running:
                 open_connections = self.controller.get_open_connections()
                 self.open_connections_list_text.value = self.__parse_open_connections_to_str(open_connections)
@@ -104,10 +130,13 @@ class ServerGUI:
                 self.open_connections_length_text.value = "Open Connections: 0"
             time.sleep(0.1)
 
-    def listen_for_messages_from_server_and_update_message_box(self) -> None:
+            if self.page is not None:
+                self.page.update()
+
+    def __listen_for_messages_from_server_and_update_message_box(self) -> None:
         """Listens for messages from the server and updates the GUI message box."""
         server_logs: multiprocessing.Queue = self.controller.logger
-        while True:
+        while self.running_flag:
             if self.controller.server_running and not server_logs.empty():
                 msg = server_logs.get()
                 self.update_msg_list(msg)
@@ -122,32 +151,38 @@ class ServerGUI:
         self.port = int(str(self.port_textbox.value))
         try:
             self.controller.start_server()
+            self.running_flag = True
         except ce.ServerAlreadyRunningError as e:
-            self.update_msg_list("Server is already running.")
+            Utility.create_snackbar(self.page, "Server is already running!")
             return
         except ce.InvalidPortError as e:
-            self.update_msg_list(f"Invalid port. {e}")
+            Utility.create_snackbar(self.page, f"Invalid port! | {e}")
             return
+        self.host_textbox.disabled = True
+        self.port_textbox.disabled = True
+        self.start_button.text = "Running!"
+        self.start_button.disabled = True
         self.__change_server_status_text(online=True)
 
     def stop_server(self):
         self.update_msg_list("Stopping server...")
         try:
             self.controller.stop_server()
+            self.__change_server_status_text(online=False)
+            self.running_flag = False
+            self.update_msg_list("Server successfully stopped.")
         except ce.ServerNotRunningError as e:
-            self.update_msg_list("Server is not running.")
+            Utility.create_snackbar(self.page, "Server is not running.")
             return
         except ce.ServerCouldNotBeClosedError as e:
-            self.update_msg_list(f"Server could not be closed. {e}")
+            Utility.create_snackbar(self.page, "Server could not be closed.")
             return
-        self.update_msg_list("Server stopped.")
-        self.__change_server_status_text(online=False)
 
     @staticmethod
     def __parse_open_connections_to_str(open_connections):
         out_str = ""
         for idx, connection in enumerate(open_connections):
-            out_str += f"{idx}. {connection}\n"
+            out_str += f"{idx + 1}. {connection}\n"
         return out_str
 
     def __change_server_status_text(self, online: bool) -> None:
@@ -160,7 +195,7 @@ class ServerGUI:
         self.page.update()
 
     def __change_fetch_frequency(self, _) -> None:
-        self.controller.fetch_frequency = int(self.fetch_frequency_textbox.value)
+        self.controller.fetch_frequency = int(self.update_rate_textbox.value)
         # todo
 
     def update_msg_list(self, message: str) -> None:
@@ -177,6 +212,7 @@ class ServerGUI:
                                                      title=self.APP_NAME,
                                                      window_width=self.WINDOW_WIDTH,
                                                      window_height=self.WINDOW_HEIGHT)
+        self.page.theme_mode = ft.ThemeMode.DARK
 
     def __draw_app_bar(self) -> None:
         """Add the app bar on the page."""
@@ -187,15 +223,18 @@ class ServerGUI:
                                      actions=[self.theme_switcher, self.exit_button])
 
     def __draw_server_controls(self) -> None:
-        self.page.add(Row(controls=[self.host_textbox, self.port_textbox], wrap=False))
-        self.page.add(Row(controls=[self.start_button,
-                                    self.stop_button,
-                                    self.server_status_text,
-                                    self.server_status_online_text,
-                                    self.fetch_frequency_textbox], wrap=False))
+        self.page.add(Row(controls=[self.host_textbox, self.port_textbox, self.start_button],
+                          wrap=False))
+        self.page.add(ft.Divider())
+        self.page.add(Row(controls=[
+            self.update_rate_textbox,
+            self.server_status_text,
+            self.server_status_online_text,
+        ], wrap=False))
 
     def __draw_open_connections(self) -> None:
-        connections_col1 = Column(controls=[self.open_connections_length_text, self.open_connections_list_text],
+        connections_col1 = Column(controls=[self.open_connections_length_text,
+                                            self.open_connections_list_text],
                                   wrap=False)
         self.page.add(connections_col1)
 
@@ -210,7 +249,9 @@ class ServerGUI:
         self.__draw_server_controls()
         self.__draw_open_connections()
         self.__draw_message_list()
+        self.page.window_always_on_top = True
         self.page.update()
+        self.__start_helper_threads()
 
 
 if __name__ == '__main__':

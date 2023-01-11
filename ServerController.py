@@ -8,7 +8,7 @@ class ServerController:
         self.port = port
         self.server = Server(self.host, self.port)
         self.server_running = False
-        self.logger = self.server.logger
+        self.logger = self.server.logging_queue
 
     def start_server(self) -> bool:
         """Starts the server. Returns True if the server is started successfully, otherwise raises an exception.
@@ -33,7 +33,7 @@ class ServerController:
         """
         if not self.server_running:
             raise ce.ServerNotRunningError("Server is not running.")
-        if server_closed := self.server.server_management_thread.command_stop_server():
+        if self.server.stop_server():
             self.server_running = False
             return True
         else:
@@ -41,8 +41,17 @@ class ServerController:
 
     def get_open_connections(self) -> list:
         """Returns a list of all open connections."""
-        return self.server.server_management_thread.command_open_connections()
+        return self.server.get_open_connections()
 
-    def change_update_rate(self, update_rate: int) -> None:
+    def change_update_rate(self, update_rate: str) -> None:
         """Changes the update rate of the server."""
-        self.server.server_management_thread.command_change_update_rate(update_rate)
+        # Only allow ints as update rate.
+        try:
+            update_rate = int(update_rate)
+        except ValueError as e:
+            raise ValueError("Update rate should be an integer.") from e
+        if not isinstance(update_rate, int):
+            raise TypeError("Update rate must be an integer.")
+        if update_rate < 10:
+            raise ValueError("Update rate cannot be less than 10 seconds.")
+        self.server.change_update_rate(update_rate)
