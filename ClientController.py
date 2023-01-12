@@ -8,7 +8,7 @@ from ClientCard import ClientCard
 
 
 class ClientController:
-    """This class is responsible for communucating the Client code with the GUI of the client. Following the MVC pattern."""
+    """This class is responsible for communicating the Client code with the GUI of the client. Following the MVC pattern."""
 
     def __init__(self, host: str, port: int):
         self.client = None

@@ -26,7 +26,7 @@ class ClientGUI:
     def __init__(self):
         self.white_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
                                                 end=ft.alignment.bottom_center,
-                                                colors=[ft.colors.PINK_200, ft.colors.BLUE_GREY_100])
+                                                colors=[ft.colors.PURPLE_100, ft.colors.BLUE_GREY_100])
         self.dark_gradient = ft.LinearGradient(begin=ft.alignment.top_center,
                                                end=ft.alignment.bottom_center,
                                                colors=[ft.colors.BLACK, ft.colors.PINK_200])
@@ -126,6 +126,7 @@ class ClientGUI:
             return
         if not self.client_registered:
             Utility.create_snackbar(self.page, "Please first register yourself by scanning your card to the card reader.")
+            return
         self.group_chat_message_queue = self.controller.get_message_queue()
         if self.subscribe_to_messages_button.text == self.UNSUBSCRIBE_BUTTON_TEXT:
             try:

@@ -32,7 +32,7 @@ class Client:
             self.send_weather_request()
             time.sleep(1)
             self.send_currency_request()
-            time.sleep(10)
+            time.sleep(5)
 
     def get_message_queue(self) -> multiprocessing.Queue:
         return self.message_queue

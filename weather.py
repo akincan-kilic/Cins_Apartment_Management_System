@@ -41,7 +41,6 @@ class WeatherDataFetcher:
         self.weather_description_selector = "#WxuCurrentConditions-main-eb4b02cb-917b-45ec-97ec-d4eb947f6b6a > div > section > div > div.CurrentConditions--body--l_4-Z > div.CurrentConditions--columns--30npQ > div.CurrentConditions--primary--2DOqs > div.CurrentConditions--phraseValue--mZC_p"
         self.day_temp_selector = "#WxuCurrentConditions-main-eb4b02cb-917b-45ec-97ec-d4eb947f6b6a > div > section > div > div.CurrentConditions--body--l_4-Z > div.CurrentConditions--columns--30npQ > div.CurrentConditions--primary--2DOqs > div.CurrentConditions--tempHiLoValue--3T1DG > span:nth-child(1)"
         self.night_temp_selector = "#WxuCurrentConditions-main-eb4b02cb-917b-45ec-97ec-d4eb947f6b6a > div > section > div > div.CurrentConditions--body--l_4-Z > div.CurrentConditions--columns--30npQ > div.CurrentConditions--primary--2DOqs > div.CurrentConditions--tempHiLoValue--3T1DG > span:nth-child(2)"
-        self.wind_selector = "#todayDetails > section > div.TodayDetailsCard--detailsContainer--2yLtL > div:nth-child(2) > div.WeatherDetailsListItem--wxData--kK35q > span"
 
     def parse_weather(self):
         html = requests.get(self.url).content

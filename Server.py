@@ -144,7 +144,10 @@ class Server(threading.Thread):
             for thread in self.open_connection_threads:
                 if not thread.is_connection_open() or not thread.is_alive():
                     self.open_connection_threads.remove(thread)
-                    self.logging_queue.put(f"Following client just disconnected: {thread.client_address}")
+                    if thread.card is not None:
+                        self.logging_queue.put(f"{thread.card.name} - {thread.card.apartment_no} has left the apartment!")
+                    else:
+                        self.logging_queue.put(f"Following client just left the apartment: {thread.client_address}")
 
     def __update_weather_for_clients(self):
         """Updates the weather for all client threads"""
@@ -169,11 +172,12 @@ class ClientThread(threading.Thread):
     """A thread that handles a single client connection"""
 
     def __init__(self, client_socket: socket.socket, client_address, msg_queue: multiprocessing.Queue, weather: dict,
-                 currency: dict, logger: multiprocessing.Queue):
+                 currency: dict, logging_queue: multiprocessing.Queue):
         super().__init__()
         self.client_socket = client_socket
         self.client_address = client_address
         self.message_queue = msg_queue
+        self.logging_queue = logging_queue
         self.weather = weather
         self.currency = currency
         self.card: ClientCard = None  # type: ignore
@@ -251,16 +255,19 @@ class ClientThread(threading.Thread):
         card_details = AkinProtocol.parse_register_response(client_msg)
         self.card = ClientCard(card_details['name'], int(card_details['apartment_no']))
         self.client_socket.send(self.card.id.encode())
+        self.logging_queue.put(f"{self.card.name} [{self.card.apartment_no}] just scanned their card and entered the apartment!")
 
     def __handle_subscribe_request(self, client_msg: str) -> None:
         """Handles the subscribe request command, this will add the client to the message channel"""
         self.subscribed_to_message_channel = True
         self.client_socket.send(AkinProtocol.OK.encode())
+        self.logging_queue.put(f"{self.card.name} [{self.card.apartment_no}] subscribed to the message channel.")
 
     def __handle_unsubscribe_request(self, client_msg: str) -> None:
         """Handles the unsubscribe request command, this will remove the client from the message channel"""
         self.subscribed_to_message_channel = False
         self.client_socket.send(AkinProtocol.OK.encode())
+        self.logging_queue.put(f"{self.card.name} [{self.card.apartment_no}] unsubscribed from the message channel.")
 
     def __handle_chat_message(self, client_msg: str) -> None:
         if self.card is None:
@@ -271,12 +278,13 @@ class ClientThread(threading.Thread):
         card_name = str(self.card.name)
         apartment_no = str(self.card.apartment_no)
 
-        chat_message = f"[{Utility.get_simple_time()}] [Apt No:{apartment_no}] {card_name}: {chat_message}"
+        chat_message = f"[{Utility.get_simple_time()}] [No:{apartment_no}] {card_name}: {chat_message}"
         chat_message = AkinProtocol.construct_chat_message(chat_message)
 
         if self.subscribed_to_message_channel:
             self.message_queue.put(chat_message)
             self.client_socket.send(AkinProtocol.OK.encode())
+            self.logging_queue.put(f"{self.card.name} [{self.card.apartment_no}] sent a message to the group chat.")
         else:
             error_message = f"{AkinProtocol.ERROR}You are not subscribed to the message channel"
             self.client_socket.send(error_message.encode())

@@ -64,3 +64,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# q: How can I split a dataframe into 8 pieces
+# a: https://stackoverflow.com/a/38250770/1391441

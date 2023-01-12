@@ -63,7 +63,7 @@ def get_detailed_time() -> str:
 def get_random_card_name() -> str:
     """Returns a random card name from a predefined list."""
     random_card_names = ['Akıncan Kılıç', 'Muhammet Gökhan Erdem', 'Bora Canbula', 'Nane Limon', 'Demli Çay',
-                         'Gürültücü Komşu', 'Sessiz Komşu', 'Komşu Köpeği', 'Komşu Kedisi', 'Komşu Kızı']
+                         'Gürültücü Komşu', 'Sessiz Komşu', 'Komşu Köpeği', 'Komşu Kedisi', 'Komşu Kızı', ]
     return random.choice(random_card_names)
 
 
